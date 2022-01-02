@@ -25,19 +25,13 @@ export function useWindowSize(): Size {
         height: window.innerHeight,
       });
     }
-    // Handler to call on screen orientation change
-    function handleOrientationChange(e: Event) {
-      // console.log(e);
-    }
     // Add event listener
     window.addEventListener("resize", handleResize);
-    window.screen.orientation.addEventListener("change", handleOrientationChange);
     // Call handler right away so state gets updated with initial window size
     handleResize();
     // Remove event listener on cleanup
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.screen.orientation.removeEventListener("change", handleOrientationChange);
     };
   }, []); // Empty array ensures that effect is only run on mount
   return windowSize;

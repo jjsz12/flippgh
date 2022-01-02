@@ -4,7 +4,7 @@ import MenuItems from "./MenuItems";
 
 function SideMenu() {
   return (
-    <Menu inverted vertical fixed="left">
+    <Menu inverted vertical fixed="left" style={{ overflow: "auto" }}>
       <MenuItems />
     </Menu>
   );
