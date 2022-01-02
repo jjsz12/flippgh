@@ -21,3 +21,5 @@ Install [Node](https://nodejs.org/) (tested with v16.13.1) and [Yarn](https://ya
 ### Building and deploying changes to Github Pages
 
 `yarn run deploy`
+
+The Github Pages URL is defined via the "homepage" value in package.json
