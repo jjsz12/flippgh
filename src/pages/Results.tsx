@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useWindowSize } from "../hooks/useWindowSize";
 
-const ifpa_path = "https://api.ifpapinball.com/v1/tournament/search?api_key=c263998fe9fc7ec4c469146461e07d54&q=Flip+PGH"
-
 function Results() {
   const size = useWindowSize();
   let className = "";
