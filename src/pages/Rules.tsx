@@ -12,7 +12,7 @@ function Rules() {
 
   return (
     <div className={className}>
-      <h1>Format & Rules</h1>
+      <h1>{"Format & Rules"}</h1>
       <ul>
         <li>3 strike knockout</li>
         <li>Random groups of 3 or 4</li>

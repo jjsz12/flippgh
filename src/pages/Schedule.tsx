@@ -1,6 +1,6 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
-import { Series, Tournament } from "../common/types";
+import { Series, Tournament } from "../common/matchplay_types";
 import { useWindowSize } from "../hooks/useWindowSize";
 
 interface ScheduleItem {
@@ -32,15 +32,15 @@ const custom_schedule: ScheduleItem[] = [
   },
   {
     date: "2022-02-09",
-    location: "Location TBD",
+    location: "Pittsburgh Pinball Dojo",
   },
   {
     date: "2022-02-16",
-    location: "Location TBD",
+    location: "Kickback Pinball Cafe",
   },
   {
     date: "2022-02-23",
-    location: "Location TBD",
+    location: "Pittsburgh Pinball Dojo",
   },
 ];
 

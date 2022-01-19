@@ -1,5 +1,3 @@
-import { Moment } from "moment";
-
 export interface Series {
   series_id: number,
   name: string,
