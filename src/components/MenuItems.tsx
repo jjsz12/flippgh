@@ -45,13 +45,13 @@ function MenuItems() {
         Schedule
       </Menu.Item>
       <Menu.Item
-        name="results"
-        active={location.pathname === "/results"}
+        name="locations"
+        active={location.pathname === "/locations"}
         onClick={() => {
-          navigate("/results");
+          navigate("/locations");
         }}
       >
-        Results & Stats
+        Location Info
       </Menu.Item>
       <Menu.Item
         name="rules"
@@ -61,6 +61,15 @@ function MenuItems() {
         }}
       >
         Format & Rules
+      </Menu.Item>
+      <Menu.Item
+        name="results"
+        active={location.pathname === "/results"}
+        onClick={() => {
+          navigate("/results");
+        }}
+      >
+        Results & Stats
       </Menu.Item>
     </>
   );

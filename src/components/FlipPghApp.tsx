@@ -2,7 +2,7 @@ import React from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { useWindowSize } from "../hooks/useWindowSize";
 import Home from "../pages/Home";
-// import './FlipPghHome.css';
+import LocationInfo from "../pages/LocationInfo";
 import Results from "../pages/Results";
 import Rules from "../pages/Rules";
 import Schedule from "../pages/Schedule";
@@ -26,8 +26,9 @@ function FlipPghApp() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/schedule" element={<Schedule />} />
-        <Route path="/results" element={<Results />} />
+        <Route path="/locations" element={<LocationInfo />} />
         <Route path="/rules" element={<Rules />} />
+        <Route path="/results" element={<Results />} />
       </Routes>
     </Router>
   );

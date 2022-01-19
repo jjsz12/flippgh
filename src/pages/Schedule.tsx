@@ -1,48 +1,8 @@
 import moment from "moment";
 import React, { useEffect, useState } from "react";
-import { Series, Tournament } from "../common/matchplay_types";
+import { Series, Tournament } from "../common/@types/matchplay_types";
+import { ScheduleItem, custom_schedule } from "../common/schedule_data";
 import { useWindowSize } from "../hooks/useWindowSize";
-
-interface ScheduleItem {
-  date: string;
-  location?: string;
-  ifpa_link?: string;
-  matchplay_link?: string;
-  no_tournament_scheduled?: boolean;
-  no_tournament_msg?: string;
-}
-
-const custom_schedule: ScheduleItem[] = [
-  {
-    date: "2022-01-12",
-    location: "Kickback Pinball Cafe",
-  },
-  {
-    date: "2022-01-19",
-    location: "Kickback Pinball Cafe",
-  },
-  {
-    date: "2022-01-26",
-    location: "Kickback Pinball Cafe",
-  },
-  {
-    date: "2022-02-02",
-    no_tournament_scheduled: true,
-    no_tournament_msg: "NO TOURNAMENT THIS WEEK",
-  },
-  {
-    date: "2022-02-09",
-    location: "Pittsburgh Pinball Dojo",
-  },
-  {
-    date: "2022-02-16",
-    location: "Kickback Pinball Cafe",
-  },
-  {
-    date: "2022-02-23",
-    location: "Pittsburgh Pinball Dojo",
-  },
-];
 
 const findMatchplayLink = (
   scheduleItem: ScheduleItem,

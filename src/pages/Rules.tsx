@@ -16,9 +16,37 @@ function Rules() {
       <ul>
         <li>3 strike knockout</li>
         <li>Random groups of 3 or 4</li>
-        <li>Bottom two players from each group get a strike</li>
+        <li>
+          Number of strikes per round varies based on total player count:
+          <ul>
+            <li>
+              Less than 16 players:
+              <ul>
+                <li>4-player groups: Bottom two players get a strike</li>
+                <li>3-player groups: Bottom player gets a strike</li>
+              </ul>
+            </li>
+            <li>
+              16 players or more:
+              <ul>
+                <li>4-player groups: Bottom two players get a strike</li>
+                <li>3-player groups: Bottom two players get a strike</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          If a vareity of machine eras are available, rounds will alternate
+          between older and newer games
+          <ul>
+            <li>
+              Note: this may be subject to modification at the discretion of
+              the tournament director due to time limitations
+            </li>
+          </ul>
+        </li>
         <li>Tournament starts at 7pm</li>
-        <li>$5 entry fee, payouts to top 3</li>
+        <li>$5 entry fee, payouts to top 3 (60/30/10%)</li>
         <li>IFPA endorsed</li>
         <li>
           Plunge extra balls
