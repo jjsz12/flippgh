@@ -29,7 +29,6 @@ export const findMatchplayUrlLabel = (
 };
 
 export const findMatchplayWinner = async (scheduleItem: ScheduleItem) => {
-  console.log(scheduleItem);
   if (scheduleItem.matchplay_url_label) {
     const path = `https://matchplay.events/data/tournaments/${scheduleItem.matchplay_url_label}/standings`;
     const response = await fetch(path);

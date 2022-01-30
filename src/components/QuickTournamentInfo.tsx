@@ -62,7 +62,6 @@ function QuickTournamentInfo() {
       .minutes(0)
       .seconds(0)
       .milliseconds(0);
-    console.log(startDateTime.toDate());
 
     const today = getTodayDateString();
     let textHeader = "";
