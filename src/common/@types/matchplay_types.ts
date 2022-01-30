@@ -4,11 +4,11 @@ export interface Series {
   status: string,
   scoring: string,
   removed_results: number,
-  tournaments: Tournament[],
+  tournaments: MatchplayTournament[],
   test: number
 }
 
-export interface Tournament {
+export interface MatchplayTournament {
   tournament_id: number,
   name: string,
   type: string,

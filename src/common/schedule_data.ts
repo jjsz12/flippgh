@@ -2,7 +2,9 @@ export interface ScheduleItem {
   date: string;
   location?: string;
   ifpa_link?: string;
+  matchplay_url_label?: string;
   matchplay_link?: string;
+  matchplay_winner?: string;
   no_tournament_scheduled?: boolean;
   no_tournament_msg?: string;
 }
@@ -39,7 +41,7 @@ export const custom_schedule: ScheduleItem[] = [
   },
   {
     date: "2022-03-02",
-    location: "Location TBD",
+    location: "Kickback Pinball Cafe",
   },
   {
     date: "2022-03-09",

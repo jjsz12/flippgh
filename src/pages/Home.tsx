@@ -1,9 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { Image } from "semantic-ui-react";
 import logo from "../assets/flip-pgh-weekly-tournament-black-v2.svg";
-import TournamentStartingSoon from "../components/TournamentStartingSoon";
+import QuickTournamentInfo from "../components/QuickTournamentInfo";
 
 function Home() {
   const size = useWindowSize();
@@ -16,7 +15,7 @@ function Home() {
 
   return (
     <div className={className}>
-      <TournamentStartingSoon />
+      <QuickTournamentInfo />
       <Image src={logo} />
       <h5>
         The Flip PGH Weekly Pinball Tournament series is held (mostly) every

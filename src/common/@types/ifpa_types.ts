@@ -1,10 +1,10 @@
 export interface Search {
   search: string,
-  tournament: Tournament[],
+  tournament: IfpaTournament[],
 
 }
 
-export interface Tournament {
+export interface IfpaTournament {
   tournament_id: string,
   tournament_name: string,
   country_code: string,
