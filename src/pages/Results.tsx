@@ -1,19 +1,11 @@
 import { useState } from "react";
 import { Accordion, AccordionTitleProps, Icon } from "semantic-ui-react";
+import ContentContainer from "../components/ContentContainer";
 import { Leaderboard } from "../components/Leaderboard";
 import { MachineStats } from "../components/MachineStats";
 import { WinnerTable } from "../components/WinnerTable";
-import { useWindowSize } from "../hooks/useWindowSize";
 
 function Results() {
-  const size = useWindowSize();
-  let className = "";
-  if (size.width && size.width > 640) {
-    className = "desktop-container";
-  } else {
-    className = "mobile-container";
-  }
-
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleClick = (
@@ -28,7 +20,7 @@ function Results() {
   };
 
   return (
-    <div className={className}>
+    <ContentContainer>
       <h1>{"Results & Stats"}</h1>
       <Accordion styled fluid>
         <Accordion.Title
@@ -65,7 +57,7 @@ function Results() {
           <MachineStats />
         </Accordion.Content>
       </Accordion>
-    </div>
+    </ContentContainer>
   );
 }
 

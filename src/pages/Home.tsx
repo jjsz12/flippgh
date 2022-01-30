@@ -1,20 +1,12 @@
 import { Link } from "react-router-dom";
-import { useWindowSize } from "../hooks/useWindowSize";
 import { Image } from "semantic-ui-react";
 import logo from "../assets/flip-pgh-weekly-tournament-black-v2.svg";
 import QuickTournamentInfo from "../components/QuickTournamentInfo";
+import ContentContainer from "../components/ContentContainer";
 
 function Home() {
-  const size = useWindowSize();
-  let className = "";
-  if (size.width && size.width > 640) {
-    className = "desktop-container";
-  } else {
-    className = "mobile-container";
-  }
-
   return (
-    <div className={className}>
+    <ContentContainer>
       <QuickTournamentInfo />
       <Image src={logo} />
       <h5>
@@ -36,7 +28,7 @@ function Home() {
           <Link to="/results">{"Go to Results & Stats"}</Link>
         </li>
       </ul>
-    </div>
+    </ContentContainer>
   );
 }
 

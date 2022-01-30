@@ -3,13 +3,17 @@ import Countdown, { CountdownRenderProps } from "react-countdown";
 import { Segment } from "semantic-ui-react";
 import { ScheduleItem } from "../common/schedule_data";
 import useScheduleData from "../hooks/useScheduleData";
+import { useWindowSize } from "../hooks/useWindowSize";
 import DirectionsButton from "./DirectionsButton";
 import MatchplayButton from "./MatchplayButton";
 
 const findNextTournament = (schedule: ScheduleItem[]) => {
   let nextTournament = null;
   for (let item of schedule) {
-    if (moment(item.date) >= moment().startOf("day") && !item.no_tournament_scheduled) {
+    if (
+      moment(item.date) >= moment().startOf("day") &&
+      !item.no_tournament_scheduled
+    ) {
       nextTournament = item;
       break;
     }
@@ -53,6 +57,21 @@ const getDirectionsLink = (location?: string) => {
 };
 
 function QuickTournamentInfo() {
+  const size = useWindowSize();
+  let style = {};
+  if (size.width && size.width > 640) {
+    style = {
+      padding: "1rem",
+    };
+  } else {
+    style = {
+      padding: "1rem",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    };
+  }
+
   const schedule = useScheduleData();
 
   const scheduleItem = findNextTournament(schedule);
@@ -80,24 +99,26 @@ function QuickTournamentInfo() {
     const directionsLink = getDirectionsLink(scheduleItem.location);
 
     return (
-      <Segment>
-        <h3>{textHeader}</h3>
-        <b>Date:</b> {moment(scheduleItem.date).format("dddd, M/D/YYYY")}
-        <br />
-        <b>Location:</b> {scheduleItem.location}
-        <br />
-        <b>Start time:</b> 7pm
-        <br />
-        <br />
-        {showCountdown ? (
-          <Countdown
-            date={startDateTime.toDate()}
-            renderer={countdownRenderer}
-          />
-        ) : null}
-        <MatchplayButton link={scheduleItem.matchplay_link} />
-        <DirectionsButton link={directionsLink} />
-      </Segment>
+      <div style={style}>
+        <Segment compact>
+          <h3>{textHeader}</h3>
+          <b>Date: </b> {moment(scheduleItem.date).format("dddd, M/D/YYYY")}
+          <br />
+          <b>Location: </b> {scheduleItem.location}
+          <br />
+          <b>Start time:</b> 7pm
+          <br />
+          <br />
+          {showCountdown ? (
+            <Countdown
+              date={startDateTime.toDate()}
+              renderer={countdownRenderer}
+            />
+          ) : null}
+          <MatchplayButton link={scheduleItem.matchplay_link} />
+          <DirectionsButton link={directionsLink} />
+        </Segment>
+      </div>
     );
   }
   return <></>;

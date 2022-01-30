@@ -16,7 +16,6 @@ function WinnerTable() {
         <Table.Body>
           {schedule.map((scheduleItem) => {
             if (scheduleItem.ifpa_link && scheduleItem.matchplay_link) {
-              // const winner = await getWinner(scheduleItem);
               return (
                 <Table.Row key={scheduleItem.date}>
                   <Table.Cell>{scheduleItem.date}</Table.Cell>

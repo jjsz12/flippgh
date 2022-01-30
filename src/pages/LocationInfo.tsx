@@ -1,17 +1,9 @@
 import React from "react";
-import { useWindowSize } from "../hooks/useWindowSize";
+import ContentContainer from "../components/ContentContainer";
 
 function LocationInfo() {
-  const size = useWindowSize();
-  let className = "";
-  if (size.width && size.width > 640) {
-    className = "desktop-container";
-  } else {
-    className = "mobile-container";
-  }
-
   return (
-    <div className={className}>
+    <ContentContainer>
       <h1>{"Location Information"}</h1>
       <ul>
         <li>
@@ -111,7 +103,7 @@ function LocationInfo() {
           </ul>
         </li>
       </ul>
-    </div>
+    </ContentContainer>
   );
 }
 

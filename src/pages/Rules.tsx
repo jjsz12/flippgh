@@ -1,16 +1,8 @@
-import { useWindowSize } from "../hooks/useWindowSize";
+import ContentContainer from "../components/ContentContainer";
 
 function Rules() {
-  const size = useWindowSize();
-  let className = "";
-  if (size.width && size.width > 640) {
-    className = "desktop-container";
-  } else {
-    className = "mobile-container";
-  }
-
   return (
-    <div className={className}>
+    <ContentContainer>
       <h1>{"Format & Rules"}</h1>
       <ul>
         <li>Tournament starts at 7pm</li>
@@ -103,7 +95,7 @@ function Rules() {
           </ul>
         </li>
       </ul>
-    </div>
+    </ContentContainer>
   );
 }
 

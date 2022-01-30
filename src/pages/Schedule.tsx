@@ -1,7 +1,7 @@
 import moment from "moment";
 import { ScheduleItem } from "../common/schedule_data";
+import ContentContainer from "../components/ContentContainer";
 import useScheduleData from "../hooks/useScheduleData";
-import { useWindowSize } from "../hooks/useWindowSize";
 
 const renderDateListItem = (dates: ScheduleItem[]) => {
   return dates.map((o) => {
@@ -35,14 +35,6 @@ const renderDateListItem = (dates: ScheduleItem[]) => {
 function Schedule() {
   const schedule = useScheduleData();
 
-  const size = useWindowSize();
-  let className = "";
-  if (size.width && size.width > 640) {
-    className = "desktop-container";
-  } else {
-    className = "mobile-container";
-  }
-
   const futureDates: ScheduleItem[] = schedule.filter((value) => {
     return moment(value.date) >= moment().startOf("day");
   });
@@ -52,12 +44,12 @@ function Schedule() {
   });
 
   return (
-    <div className={className}>
+    <ContentContainer>
       <h1>Upcoming Schedule</h1>
       <ul>{renderDateListItem(futureDates)}</ul>
       <h1>Past Dates</h1>
       <ul>{renderDateListItem(pastDates)}</ul>
-    </div>
+    </ContentContainer>
   );
 }
 
