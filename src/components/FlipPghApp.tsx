@@ -11,7 +11,6 @@ import SideMenu from "./SideMenu";
 
 function FlipPghApp() {
   const size = useWindowSize();
-  // console.log(size);
 
   const renderMenu = () => {
     if (size.width && size.width > 640) {

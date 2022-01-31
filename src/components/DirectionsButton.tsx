@@ -13,6 +13,7 @@ function DirectionsButton({ link }: DirectionsButtonProps) {
         href={link}
         target="_blank"
         rel="noopener noreferrer"
+        style={{ marginBottom: "0.5rem" }}
       >
         Get Directions
       </Button>

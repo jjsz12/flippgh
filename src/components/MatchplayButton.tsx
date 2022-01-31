@@ -12,6 +12,7 @@ function MatchplayButton({ link }: MatchplayButtonProps) {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
+      style={{ marginBottom: "0.5rem" }}
     >
       Go to Matchplay
     </Button>

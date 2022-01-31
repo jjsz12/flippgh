@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Image } from "semantic-ui-react";
+import { Grid, Image } from "semantic-ui-react";
 import logo from "../assets/flip-pgh-weekly-tournament-black-v2.svg";
 import QuickTournamentInfo from "../components/QuickTournamentInfo";
 import ContentContainer from "../components/ContentContainer";
@@ -7,8 +7,25 @@ import ContentContainer from "../components/ContentContainer";
 function Home() {
   return (
     <ContentContainer>
-      <QuickTournamentInfo />
-      <Image src={logo} />
+      <Grid>
+        <Grid.Row>
+          <Grid.Column
+            mobile={16}
+            tablet={16}
+            computer={8}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <QuickTournamentInfo />
+          </Grid.Column>
+          <Grid.Column mobile={16} tablet={16} computer={8}>
+            <Image src={logo} />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
       <h5>
         The Flip PGH Weekly Pinball Tournament series is held (mostly) every
         Wednesday at locations around the Pittsburgh area. 7pm start time. Come

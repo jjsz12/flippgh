@@ -3,7 +3,6 @@ import Countdown, { CountdownRenderProps } from "react-countdown";
 import { Segment } from "semantic-ui-react";
 import { ScheduleItem } from "../common/schedule_data";
 import useScheduleData from "../hooks/useScheduleData";
-import { useWindowSize } from "../hooks/useWindowSize";
 import DirectionsButton from "./DirectionsButton";
 import MatchplayButton from "./MatchplayButton";
 
@@ -57,21 +56,6 @@ const getDirectionsLink = (location?: string) => {
 };
 
 function QuickTournamentInfo() {
-  const size = useWindowSize();
-  let style = {};
-  if (size.width && size.width > 640) {
-    style = {
-      padding: "1rem",
-    };
-  } else {
-    style = {
-      padding: "1rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    };
-  }
-
   const schedule = useScheduleData();
 
   const scheduleItem = findNextTournament(schedule);
@@ -99,7 +83,7 @@ function QuickTournamentInfo() {
     const directionsLink = getDirectionsLink(scheduleItem.location);
 
     return (
-      <div style={style}>
+      <div style={{ paddingBottom: "1rem" }}>
         <Segment compact>
           <h3>{textHeader}</h3>
           <b>Date: </b> {moment(scheduleItem.date).format("dddd, M/D/YYYY")}

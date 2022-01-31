@@ -8,19 +8,19 @@ function ContentContainer({ children }: PropsWithChildren<{}>) {
   if (size.width && size.width > 640) {
     style = {
       marginLeft: "210px",
-      padding: "1rem",
+      padding: "2rem",
     };
   } else {
     style = {
       marginTop: "76px",
-      padding: "1rem",
+      padding: "2rem",
     };
   }
 
   return (
     <div style={style}>
       <Grid>
-        <Grid.Column mobile={16} tablet={16} computer={12}>
+        <Grid.Column mobile={16} tablet={16} computer={16}>
           {children}
         </Grid.Column>
       </Grid>
