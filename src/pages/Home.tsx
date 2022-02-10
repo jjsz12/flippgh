@@ -12,7 +12,7 @@ function Home() {
           <Grid.Column
             mobile={16}
             tablet={16}
-            computer={8}
+            computer={7}
             style={{
               display: "flex",
               alignItems: "center",
@@ -21,7 +21,7 @@ function Home() {
           >
             <QuickTournamentInfo />
           </Grid.Column>
-          <Grid.Column mobile={16} tablet={16} computer={8}>
+          <Grid.Column mobile={16} tablet={16} computer={9}>
             <Image src={logo} />
           </Grid.Column>
         </Grid.Row>

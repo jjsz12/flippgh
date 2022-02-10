@@ -1,7 +1,9 @@
 import moment from "moment";
+import { useContext } from "react";
 import { ScheduleItem } from "../common/schedule_data";
+import { AppContext, AppContextType } from "../components/AppContext";
 import ContentContainer from "../components/ContentContainer";
-import useScheduleData from "../hooks/useScheduleData";
+import { TextPlaceholder } from "../components/TextPlaceholder";
 
 const renderDateListItem = (dates: ScheduleItem[]) => {
   return dates.map((o) => {
@@ -33,24 +35,41 @@ const renderDateListItem = (dates: ScheduleItem[]) => {
 };
 
 function Schedule() {
-  const schedule = useScheduleData();
+  const { schedule }: AppContextType = useContext(AppContext);
 
-  const futureDates: ScheduleItem[] = schedule.filter((value) => {
-    return moment(value.date) >= moment().startOf("day");
-  });
+  if (schedule && schedule.length === 0) {
+    return (
+      <ContentContainer>
+        <h1>Upcoming Schedule</h1>
+        <TextPlaceholder />
+        <h1>Past Dates</h1>
+        <TextPlaceholder />
+      </ContentContainer>
+    );
+  }
 
-  const pastDates: ScheduleItem[] = schedule.filter((value) => {
-    return moment(value.date) < moment().startOf("day");
-  });
+  if (schedule !== undefined) {
+    const futureDates: ScheduleItem[] = schedule.filter((value) => {
+      return moment(value.date) >= moment().startOf("day");
+    });
 
-  return (
-    <ContentContainer>
-      <h1>Upcoming Schedule</h1>
-      <ul>{renderDateListItem(futureDates)}</ul>
-      <h1>Past Dates</h1>
-      <ul>{renderDateListItem(pastDates)}</ul>
-    </ContentContainer>
-  );
+    const pastDates: ScheduleItem[] = schedule.filter((value) => {
+      return (
+        moment(value.date) < moment().startOf("day") &&
+        !value.no_tournament_scheduled
+      );
+    });
+
+    return (
+      <ContentContainer>
+        <h1>Upcoming Schedule</h1>
+        <ul>{renderDateListItem(futureDates)}</ul>
+        <h1>Past Dates</h1>
+        <ul>{renderDateListItem(pastDates)}</ul>
+      </ContentContainer>
+    );
+  }
+  return <></>;
 }
 
 export default Schedule;

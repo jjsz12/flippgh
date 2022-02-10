@@ -45,7 +45,7 @@ export const custom_schedule: ScheduleItem[] = [
   },
   {
     date: "2022-03-09",
-    location: "Location TBD",
+    location: "Kickback Pinball Cafe",
   },
   {
     date: "2022-03-16",

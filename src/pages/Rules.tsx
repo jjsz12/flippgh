@@ -21,23 +21,12 @@ function Rules() {
         </li>
 
         <li>
-          Number of strikes per round varies based on total player count:
-          <ul>
-            <li>
-              19 players or less:
-              <ul>
-                <li>4-player groups: Bottom two players get a strike</li>
-                <li>3-player groups: Bottom player gets a strike</li>
-              </ul>
-            </li>
-            <li>
-              20 players or more:
-              <ul>
-                <li>4-player groups: Bottom two players get a strike</li>
-                <li>3-player groups: Bottom two players get a strike</li>
-              </ul>
-            </li>
-          </ul>
+          Number of strikes per round varies based on different factors,
+          including total player count, venue closing time, average machine
+          playing time, etc. One strike given in three-player groups will be
+          preferred, but may be altered to two strikes given in three-player
+          groups at the discretion of the tournament director due to these
+          factors.
         </li>
         <li>
           Plunge extra balls
@@ -61,19 +50,7 @@ function Rules() {
           </ul>
         </li>
         <li>
-          Payouts to top 3 players (60/30/10% -- rounded to the nearest multiple
-          of $5)
-          <ul>
-            <li>
-              If 2nd and 3rd place players obtain their final strikes at the
-              same time, machine score of the final game will be the tiebreak
-              for payouts, but will not affect the results submitted to IFPA
-            </li>
-            <li>
-              Any tiebreak game played for 3rd place will only be for the 3rd
-              place payout amount, and not affect the results submitted to IFPA
-            </li>
-          </ul>
+          Payouts to top 3 players (60/30/10% -- rounded to a multiple of $5)
         </li>
         <li>
           The{" "}

@@ -47,6 +47,21 @@ function LocationInfo() {
                 <li>Open 10am-11pm on tournament days</li>
                 <li>Games are coin drop; prices range from $.25 to $1</li>
                 <li>BYOB permitted; $5 corkage/storage fee</li>
+                <li>
+                  <b>
+                    <i>
+                      Special thanks to{" "}
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="http://pghpinball.com/"
+                      >
+                        PGH Pinball
+                      </a>{" "}
+                      for sponsoring the IFPA endorsement fees!
+                    </i>
+                  </b>
+                </li>
               </ul>
             </li>
           </ul>
@@ -91,13 +106,21 @@ function LocationInfo() {
             <li>
               Notes:
               <ul>
-                <li>Open ??-?? on tournament days</li>
+                <li>Open 6-11pm on tournament days</li>
                 <li>
                   $15 venue cover fee in addition to tournament entry fee ($20
                   total); all games are on free play
                 </li>
                 <li>Masks required</li>
                 <li>BYOB permitted (no additional fee)</li>
+                <li>
+                  <b>
+                    <i>
+                      Special thanks to the Pittsburgh Pinball Dojo for
+                      sponsoring the IFPA endorsement fees!
+                    </i>
+                  </b>
+                </li>
               </ul>
             </li>
           </ul>

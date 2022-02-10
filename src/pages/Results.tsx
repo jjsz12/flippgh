@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Accordion, AccordionTitleProps, Icon } from "semantic-ui-react";
+import { Accordion, AccordionTitleProps, Grid, Icon } from "semantic-ui-react";
 import ContentContainer from "../components/ContentContainer";
 import { Leaderboard } from "../components/Leaderboard";
 import { MachineStats } from "../components/MachineStats";
-import { WinnerTable } from "../components/WinnerTable";
+import { ChampionTable } from "../components/ChampionTable";
 
 function Results() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -29,10 +29,15 @@ function Results() {
           onClick={handleClick}
         >
           <Icon name="dropdown" />
-          Past Winners
+          Tournament Stats
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
-          <WinnerTable />
+          <Grid stackable columns={2}>
+            <Grid.Column>
+              <h3>Medal Leaderboard</h3>
+              <Leaderboard /></Grid.Column>
+            <Grid.Column><h3>Past Champions</h3><ChampionTable /></Grid.Column>
+          </Grid>
         </Accordion.Content>
         <Accordion.Title
           active={activeIndex === 1}
@@ -40,20 +45,9 @@ function Results() {
           onClick={handleClick}
         >
           <Icon name="dropdown" />
-          Medal Leaderboard
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 1}>
-          <Leaderboard />
-        </Accordion.Content>
-        <Accordion.Title
-          active={activeIndex === 2}
-          index={2}
-          onClick={handleClick}
-        >
-          <Icon name="dropdown" />
           Machine Stats
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 2}>
+        <Accordion.Content active={activeIndex === 1}>
           <MachineStats />
         </Accordion.Content>
       </Accordion>
