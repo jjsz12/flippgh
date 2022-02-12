@@ -4,11 +4,13 @@ import { Series } from "../common/@types/matchplay_types";
 import { custom_schedule, ScheduleItem } from "../common/schedule_data";
 import {
   findIfpaLink,
+  findIfpaPoints,
   findMatchplayLink,
   findMatchplayUrlLabel,
   findMatchplayWinner,
 } from "../common/utils";
 import json from "../common/ifpa.json";
+import ifpa_results from "../common/ifpa_results.json";
 
 export interface AppContextType {
   schedule?: ScheduleItem[] | undefined;
@@ -42,6 +44,7 @@ export function AppProvider({ children }: AppProviderProps) {
             );
             o.matchplay_winner = await findMatchplayWinner(o);
             o.ifpa_link = findIfpaLink(o, json.tournament);
+            o.ifpa_points = findIfpaPoints(o, ifpa_results)?.replace("00", "");
             return o;
           })
         );

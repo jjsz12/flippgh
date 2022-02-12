@@ -123,7 +123,7 @@ function Leaderboard() {
         <Table.Row>
           <Table.HeaderCell>Player</Table.HeaderCell>
           <Table.HeaderCell>Medals</Table.HeaderCell>
-          <Table.HeaderCell>Points</Table.HeaderCell>
+          <Table.HeaderCell>Value</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>

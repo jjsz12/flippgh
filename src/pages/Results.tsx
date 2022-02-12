@@ -33,10 +33,14 @@ function Results() {
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
           <Grid stackable columns={2}>
-            <Grid.Column>
+            <Grid.Column width={9}>
+              <h3>Past Champions</h3>
+              <ChampionTable />
+            </Grid.Column>
+            <Grid.Column width={7}>
               <h3>Medal Leaderboard</h3>
-              <Leaderboard /></Grid.Column>
-            <Grid.Column><h3>Past Champions</h3><ChampionTable /></Grid.Column>
+              <Leaderboard />
+            </Grid.Column>
           </Grid>
         </Accordion.Content>
         <Accordion.Title

@@ -1,4 +1,4 @@
-import { IfpaTournament } from "./@types/ifpa_types";
+import { IfpaTournament, SimpleResults } from "./@types/ifpa_types";
 import { MatchplayTournament, Standings } from "./@types/matchplay_types";
 import { ScheduleItem } from "./schedule_data";
 
@@ -51,4 +51,14 @@ export const findIfpaLink = (
   if (tournamentId) {
     return "https://www.ifpapinball.com/tournaments/view.php?t=" + tournamentId;
   }
+};
+
+export const findIfpaPoints = (
+  scheduleItem: ScheduleItem,
+  results: SimpleResults[]
+) => {
+  const matchedResult = results.find((value) => {
+    return value.event_date === scheduleItem.date;
+  });
+  return matchedResult?.points;
 };

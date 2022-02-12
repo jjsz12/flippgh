@@ -32,3 +32,10 @@ export interface Results {
   rank: string,
   wppr_value: string,
 }
+
+export interface SimpleResults {
+  tournament_id: string,
+  tournament_location: string,
+  event_date: string,
+  points: string,
+}

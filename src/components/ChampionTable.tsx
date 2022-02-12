@@ -29,6 +29,7 @@ function ChampionTable() {
         <Table.Row>
           <Table.HeaderCell>Date</Table.HeaderCell>
           <Table.HeaderCell>Champion</Table.HeaderCell>
+          <Table.HeaderCell>Points</Table.HeaderCell>
           <Table.HeaderCell>Details</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
@@ -43,6 +44,7 @@ function ChampionTable() {
                       <Icon name="trophy" color="yellow" />{" "}
                       {scheduleItem.matchplay_winner}
                     </Table.Cell>
+                    <Table.Cell>{scheduleItem.ifpa_points}</Table.Cell>
                     <Table.Cell>
                       {"["}
                       <a
