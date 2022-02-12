@@ -50,7 +50,7 @@ export const custom_schedule: ScheduleItem[] = [
   },
   {
     date: "2022-03-16",
-    location: "Location TBD",
+    location: "Pittsburgh Pinball Dojo",
   },
   {
     date: "2022-03-23",
@@ -58,6 +58,6 @@ export const custom_schedule: ScheduleItem[] = [
   },
   {
     date: "2022-03-30",
-    location: "Location TBD",
+    location: "Pittsburgh Pinball Dojo",
   },
 ];
