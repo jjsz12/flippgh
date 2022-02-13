@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Accordion, AccordionTitleProps, Grid, Icon } from "semantic-ui-react";
 import ContentContainer from "../components/ContentContainer";
-import { Leaderboard } from "../components/Leaderboard";
+import { TrophyLeaderboard } from "../components/TrophyLeaderboard";
 import { MachineStats } from "../components/MachineStats";
 import { ChampionTable } from "../components/ChampionTable";
 
@@ -38,8 +38,8 @@ function Results() {
               <ChampionTable />
             </Grid.Column>
             <Grid.Column width={7}>
-              <h3>Medal Leaderboard</h3>
-              <Leaderboard />
+              <h3>Trophy Leaderboard</h3>
+              <TrophyLeaderboard />
             </Grid.Column>
           </Grid>
         </Accordion.Content>

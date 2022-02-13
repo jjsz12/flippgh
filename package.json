@@ -29,7 +29,8 @@
     "eject": "react-scripts eject",
     "predeploy": "yarn run cache-ifpa && yarn run build",
     "deploy": "gh-pages -d build",
-    "cache-ifpa": "node cacheIfpa.js"
+    "cache-ifpa": "node cacheIfpa.js",
+    "cache-matchplay": "node cacheNextMatchplay.js"
   },
   "eslintConfig": {
     "extends": [

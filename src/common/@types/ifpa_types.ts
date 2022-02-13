@@ -1,7 +1,6 @@
 export interface Search {
   search: string,
   tournament: IfpaTournament[],
-
 }
 
 export interface IfpaTournament {

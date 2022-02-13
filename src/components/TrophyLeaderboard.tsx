@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Icon, Table } from "semantic-ui-react";
 import { Standings } from "../common/@types/matchplay_types";
 import { AppContext, AppContextType } from "./AppContext";
+import { TrophyLegend } from "./TrophyLegend";
 
 interface medal {
   player: string;
@@ -40,7 +41,7 @@ const getMedalists = (standings: Standings[]) => {
   return medalists;
 };
 
-function Leaderboard() {
+function TrophyLeaderboard() {
   const { schedule }: AppContextType = useContext(AppContext);
   const [medalList, setMedalList] = useState<medal[]>([]);
 
@@ -122,7 +123,7 @@ function Leaderboard() {
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Player</Table.HeaderCell>
-          <Table.HeaderCell>Medals</Table.HeaderCell>
+          <Table.HeaderCell>Trophy Count</Table.HeaderCell>
           <Table.HeaderCell>Value</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
@@ -155,8 +156,15 @@ function Leaderboard() {
           );
         })}
       </Table.Body>
+      <Table.Footer>
+        <Table.Row>
+          <Table.HeaderCell colSpan={3}>
+            <TrophyLegend />
+          </Table.HeaderCell>
+        </Table.Row>
+      </Table.Footer>
     </Table>
   );
 }
 
-export { Leaderboard };
+export { TrophyLeaderboard };
