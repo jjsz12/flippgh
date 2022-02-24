@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/flippgh/static/css/main.1f292b25.chunk.css",
-    "main.js": "/flippgh/static/js/main.120772f4.chunk.js",
-    "main.js.map": "/flippgh/static/js/main.120772f4.chunk.js.map",
-    "runtime-main.js": "/flippgh/static/js/runtime-main.f71b1602.js",
-    "runtime-main.js.map": "/flippgh/static/js/runtime-main.f71b1602.js.map",
+    "main.css": "/flippgh/static/css/main.3f7a1928.chunk.css",
+    "main.js": "/flippgh/static/js/main.65401631.chunk.js",
+    "main.js.map": "/flippgh/static/js/main.65401631.chunk.js.map",
+    "runtime-main.js": "/flippgh/static/js/runtime-main.256b3c64.js",
+    "runtime-main.js.map": "/flippgh/static/js/runtime-main.256b3c64.js.map",
     "static/css/2.e5bba66d.chunk.css": "/flippgh/static/css/2.e5bba66d.chunk.css",
-    "static/js/2.5bd4ab5e.chunk.js": "/flippgh/static/js/2.5bd4ab5e.chunk.js",
-    "static/js/2.5bd4ab5e.chunk.js.map": "/flippgh/static/js/2.5bd4ab5e.chunk.js.map",
-    "static/js/3.b76d4cc5.chunk.js": "/flippgh/static/js/3.b76d4cc5.chunk.js",
-    "static/js/3.b76d4cc5.chunk.js.map": "/flippgh/static/js/3.b76d4cc5.chunk.js.map",
+    "static/js/2.f7e78dd0.chunk.js": "/flippgh/static/js/2.f7e78dd0.chunk.js",
+    "static/js/2.f7e78dd0.chunk.js.map": "/flippgh/static/js/2.f7e78dd0.chunk.js.map",
+    "static/js/3.f3ccdff2.chunk.js": "/flippgh/static/js/3.f3ccdff2.chunk.js",
+    "static/js/3.f3ccdff2.chunk.js.map": "/flippgh/static/js/3.f3ccdff2.chunk.js.map",
     "index.html": "/flippgh/index.html",
     "static/css/2.e5bba66d.chunk.css.map": "/flippgh/static/css/2.e5bba66d.chunk.css.map",
-    "static/css/main.1f292b25.chunk.css.map": "/flippgh/static/css/main.1f292b25.chunk.css.map",
-    "static/js/2.5bd4ab5e.chunk.js.LICENSE.txt": "/flippgh/static/js/2.5bd4ab5e.chunk.js.LICENSE.txt",
+    "static/css/main.3f7a1928.chunk.css.map": "/flippgh/static/css/main.3f7a1928.chunk.css.map",
+    "static/js/2.f7e78dd0.chunk.js.LICENSE.txt": "/flippgh/static/js/2.f7e78dd0.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/flippgh/static/media/outline-icons.ddae9b1b.woff",
     "static/media/flip-pgh-logo-white.025b1149.svg": "/flippgh/static/media/flip-pgh-logo-white.025b1149.svg",
     "static/media/flip-pgh-weekly-tournament-black-v2.df55a2c6.svg": "/flippgh/static/media/flip-pgh-weekly-tournament-black-v2.df55a2c6.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f71b1602.js",
+    "static/js/runtime-main.256b3c64.js",
     "static/css/2.e5bba66d.chunk.css",
-    "static/js/2.5bd4ab5e.chunk.js",
-    "static/css/main.1f292b25.chunk.css",
-    "static/js/main.120772f4.chunk.js"
+    "static/js/2.f7e78dd0.chunk.js",
+    "static/css/main.3f7a1928.chunk.css",
+    "static/js/main.65401631.chunk.js"
   ]
 }
