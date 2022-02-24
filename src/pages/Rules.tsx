@@ -20,7 +20,7 @@ function Rules() {
           </ul>
         </li>
         <li>
-          Number of strikes per round varies based on different factors,
+          Number of strikes per group varies based on different factors,
           including total player count, venue closing time, average machine
           playing time, etc. One strike given in three-player groups will be
           preferred but may be altered to two strikes given in three-player

@@ -10,6 +10,7 @@ export interface TournamentLocation {
 }
 
 export interface TournamentGames {
+  tournamentId: number;
   arenaId: number;
   status: string;
   startedAt: string;

@@ -49,7 +49,11 @@ function TrophyLeaderboard() {
     const finishedTournamentLabels: string[] = [];
     if (schedule) {
       schedule.forEach((entry) => {
-        if (entry.matchplay_winner && entry.matchplay_url_label) {
+        if (
+          entry.status === "completed" &&
+          entry.matchplay_winner &&
+          entry.matchplay_url_label
+        ) {
           finishedTournamentLabels.push(entry.matchplay_url_label);
         }
       });

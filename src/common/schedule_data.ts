@@ -8,6 +8,7 @@ export interface ScheduleItem {
   matchplay_winner?: string;
   no_tournament_scheduled?: boolean;
   no_tournament_msg?: string;
+  status?: string;
 }
 
 export const custom_schedule: ScheduleItem[] = [
@@ -54,7 +55,7 @@ export const custom_schedule: ScheduleItem[] = [
   },
   {
     date: "2022-03-23",
-    location: "Location TBD",
+    location: "Coop De Ville",
   },
   {
     date: "2022-03-30",

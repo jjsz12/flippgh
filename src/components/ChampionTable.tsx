@@ -36,7 +36,10 @@ function ChampionTable() {
       <Table.Body>
         {schedule
           ? schedule.map((scheduleItem) => {
-              if (scheduleItem.matchplay_winner) {
+              if (
+                scheduleItem.status === "completed" &&
+                scheduleItem.matchplay_winner
+              ) {
                 return (
                   <Table.Row key={scheduleItem.date}>
                     <Table.Cell>{scheduleItem.date}</Table.Cell>

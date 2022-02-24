@@ -54,6 +54,9 @@ const getDirectionsLink = (location?: string) => {
   if (location === "Pittsburgh Pinball Dojo") {
     return "https://goo.gl/maps/3Gx2gYpg3xuyaLucA";
   }
+  if (location === "Coop De Ville") {
+    return "https://goo.gl/maps/8zW4bUvXdtKB1v8f9";
+  }
   return;
 };
 

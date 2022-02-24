@@ -6,7 +6,6 @@ import {
   findIfpaLink,
   findIfpaPoints,
   findMatchplayLink,
-  findMatchplayUrlLabel,
   findMatchplayWinner,
 } from "../common/utils";
 import json from "../common/ifpa.json";
@@ -37,14 +36,15 @@ export function AppProvider({ children }: AppProviderProps) {
         });
         const updatedSchedule = await Promise.all(
           custom_schedule.map(async (o) => {
-            o.matchplay_link = findMatchplayLink(o, series.tournaments);
-            o.matchplay_url_label = findMatchplayUrlLabel(
-              o,
-              series.tournaments
-            );
+            const matchplayTournament = series.tournaments.find((value) => {
+              return value.date === o.date;
+            });
+            o.matchplay_link = findMatchplayLink(o, matchplayTournament);
+            o.matchplay_url_label = matchplayTournament?.url_label;
             o.matchplay_winner = await findMatchplayWinner(o);
             o.ifpa_link = findIfpaLink(o, json.tournament);
             o.ifpa_points = findIfpaPoints(o, ifpa_results)?.replace("00", "");
+            o.status = matchplayTournament?.status;
             return o;
           })
         );
