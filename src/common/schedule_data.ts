@@ -3,6 +3,7 @@ export interface ScheduleItem {
   location?: string;
   ifpa_link?: string;
   ifpa_points?: string;
+  matchplay_tournament_id?: number
   matchplay_url_label?: string;
   matchplay_link?: string;
   matchplay_winner?: string;

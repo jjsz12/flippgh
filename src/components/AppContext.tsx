@@ -45,6 +45,7 @@ export function AppProvider({ children }: AppProviderProps) {
             o.ifpa_link = findIfpaLink(o, json.tournament);
             o.ifpa_points = findIfpaPoints(o, ifpa_results)?.replace("00", "");
             o.status = matchplayTournament?.status;
+            o.matchplay_tournament_id = matchplayTournament?.tournament_id;
             return o;
           })
         );
