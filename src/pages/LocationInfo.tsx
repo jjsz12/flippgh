@@ -165,9 +165,9 @@ function LocationInfo() {
             <li>
               Notes:
               <ul>
-                <li>Open 11:30am-9pm on tournament days</li>
+                <li>Open 11:30am-close on tournament days</li>
                 <li>Games are coin drop; prices range from $.75 to $1</li>
-                {/* <li>
+                <li>
                   <b>
                     <i>
                       Special thanks to{" "}
@@ -181,7 +181,7 @@ function LocationInfo() {
                       for sponsoring the IFPA endorsement fees!
                     </i>
                   </b>
-                </li> */}
+                </li>
               </ul>
             </li>
           </ul>
