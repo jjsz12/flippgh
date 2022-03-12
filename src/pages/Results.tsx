@@ -29,7 +29,7 @@ function Results() {
           onClick={handleClick}
         >
           <Icon name="dropdown" />
-          Tournament Stats
+          Tournament Results
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
           <Grid stackable columns={2}>
