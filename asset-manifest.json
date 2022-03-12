@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/flippgh/static/css/main.3f7a1928.chunk.css",
-    "main.js": "/flippgh/static/js/main.e85ec98e.chunk.js",
-    "main.js.map": "/flippgh/static/js/main.e85ec98e.chunk.js.map",
+    "main.js": "/flippgh/static/js/main.b904f891.chunk.js",
+    "main.js.map": "/flippgh/static/js/main.b904f891.chunk.js.map",
     "runtime-main.js": "/flippgh/static/js/runtime-main.278767b5.js",
     "runtime-main.js.map": "/flippgh/static/js/runtime-main.278767b5.js.map",
     "static/css/2.e5bba66d.chunk.css": "/flippgh/static/css/2.e5bba66d.chunk.css",
@@ -23,6 +23,6 @@
     "static/css/2.e5bba66d.chunk.css",
     "static/js/2.026f1b1c.chunk.js",
     "static/css/main.3f7a1928.chunk.css",
-    "static/js/main.e85ec98e.chunk.js"
+    "static/js/main.b904f891.chunk.js"
   ]
 }
