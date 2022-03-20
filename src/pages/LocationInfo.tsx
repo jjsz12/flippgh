@@ -48,6 +48,10 @@ function LocationInfo() {
                 <li>Games are coin drop; prices range from $.25 to $1</li>
                 <li>BYOB permitted; $5 corkage/storage fee</li>
                 <li>
+                  Food, coffee/espresso, and non-alcoholic drinks are available
+                  for purchase
+                </li>
+                <li>
                   <b>
                     <i>
                       Special thanks to{" "}
@@ -111,8 +115,12 @@ function LocationInfo() {
                   $15 venue cover fee in addition to tournament entry fee ($20
                   total); all games are on free play
                 </li>
-                <li>Masks required</li>
+                <li>
+                  <s>Masks required</s> **Masks no longer required as of March
+                  16, 2022
+                </li>
                 <li>BYOB permitted (no additional fee)</li>
+                <li>BYO-Food permitted; snacks available for purchase</li>
                 <li>
                   <b>
                     <i>
@@ -167,6 +175,78 @@ function LocationInfo() {
               <ul>
                 <li>Open 11:30am-close on tournament days</li>
                 <li>Games are coin drop; prices range from $.75 to $1</li>
+                <li>
+                  Food and drinks are available for purchase (full service
+                  coffee and drink bar)
+                </li>
+                <li>
+                  <b>
+                    <i>
+                      Special thanks to{" "}
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="http://pghpinball.com/"
+                      >
+                        PGH Pinball
+                      </a>{" "}
+                      for sponsoring the IFPA endorsement fees!
+                    </i>
+                  </b>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <b>Shorty's Pins x Pints</b>
+          <ul>
+            <li>
+              Address: 353 N Shore Dr, Pittsburgh, PA 15212 [
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://goo.gl/maps/KJDz1vYmiPJbs3PV9"
+              >
+                Google Maps
+              </a>
+              ]
+            </li>
+            <li>
+              Website:{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.shortysx.com/pins-x-pints/north-shore"
+              >
+                https://www.shortysx.com/pins-x-pints/north-shore
+              </a>
+            </li>
+            <li>
+              Current game list: [
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://pinballmap.com/map/?by_location_id=17078"
+              >
+                Pinball Map
+              </a>
+              ]
+            </li>
+            <li>
+              Notes:
+              <ul>
+                <li>Open 4pm-midnight on tournament days</li>
+                <li>
+                  Games are paid via game card; prices are given in "credits"
+                  and vary based on amount loaded on card
+                </li>
+                <li>
+                  Food and drinks are available for purchase (full service bar)
+                </li>
+                <li>Cashless establishment; only card payments are accepted</li>
                 <li>
                   <b>
                     <i>

@@ -57,6 +57,9 @@ const getDirectionsLink = (location?: string) => {
   if (location === "Coop De Ville") {
     return "https://goo.gl/maps/8zW4bUvXdtKB1v8f9";
   }
+  if (location === "Shorty's Pins x Pints") {
+    return "https://goo.gl/maps/KJDz1vYmiPJbs3PV9";
+  }
   return;
 };
 
