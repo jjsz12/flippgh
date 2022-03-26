@@ -2,7 +2,7 @@
   "name": "flippgh",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://jjsz12.github.io/flippgh",
+  "homepage": "https://flippgh.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

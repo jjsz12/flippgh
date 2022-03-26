@@ -1,5 +1,6 @@
 import moment from "moment";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { Accordion, Icon } from "semantic-ui-react";
 import { ScheduleItem } from "../common/schedule_data";
 import { AppContext, AppContextType } from "../components/AppContext";
 import ContentContainer from "../components/ContentContainer";
@@ -36,13 +37,13 @@ const renderDateListItem = (dates: ScheduleItem[]) => {
 
 function Schedule() {
   const { schedule }: AppContextType = useContext(AppContext);
+  const [isPastDatesOpen, setPastDatesOpen] = useState<boolean>(false);
 
   if (schedule && schedule.length === 0) {
     return (
       <ContentContainer>
         <h1>Upcoming Schedule</h1>
         <TextPlaceholder />
-        <h1>Past Dates</h1>
         <TextPlaceholder />
       </ContentContainer>
     );
@@ -64,8 +65,21 @@ function Schedule() {
       <ContentContainer>
         <h1>Upcoming Schedule</h1>
         <ul>{renderDateListItem(futureDates)}</ul>
-        <h1>Past Dates</h1>
-        <ul>{renderDateListItem(pastDates)}</ul>
+        <Accordion>
+          <Accordion.Title
+            active={isPastDatesOpen}
+            index={0}
+            onClick={() => {
+              setPastDatesOpen(!isPastDatesOpen);
+            }}
+          >
+            <Icon name="dropdown" />
+            <b>Past Dates</b>
+          </Accordion.Title>
+          <Accordion.Content active={isPastDatesOpen}>
+            {renderDateListItem(pastDates)}
+          </Accordion.Content>
+        </Accordion>
       </ContentContainer>
     );
   }

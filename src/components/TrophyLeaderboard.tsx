@@ -117,6 +117,12 @@ function TrophyLeaderboard() {
   medalFinal.sort((a, b) => {
     const aTotal = a.goldCount * 3 + a.silverCount * 2 + a.bronzeCount;
     const bTotal = b.goldCount * 3 + b.silverCount * 2 + b.bronzeCount;
+    if (aTotal === bTotal) {
+      if (b.goldCount === a.goldCount) {
+        return b.silverCount - a.silverCount;
+      }
+      return b.goldCount - a.goldCount;
+    }
     return bTotal - aTotal;
   });
 
