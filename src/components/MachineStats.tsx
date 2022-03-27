@@ -147,7 +147,7 @@ function MachineStats() {
           const avgSeconds = o.totalPlaytimeSeconds / o.playerCount;
           const avgTime = moment.duration(avgSeconds, "seconds");
           return (
-            <Table.Row>
+            <Table.Row key={o.name + o.location}>
               <Table.Cell>{o.name}</Table.Cell>
               <Table.Cell>{o.location}</Table.Cell>
               <Table.Cell>{o.playCount}</Table.Cell>

@@ -29,7 +29,7 @@ function MobileMenu() {
         text="Menu"
         icon="bars"
         simple
-        style={{ "margin-left": "auto" }}
+        style={{ marginLeft: "auto" }}
         className="menu-dropdown"
       >
         <Dropdown.Menu style={{ right: 0, left: "auto" }}>
