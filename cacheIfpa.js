@@ -1,7 +1,8 @@
 const fs = require("fs");
 const fetch = require("node-fetch");
+require('dotenv').config();
 
-const apiKey = "";
+const apiKey = process.env.IFPA_API_KEY;
 const basePath = "https://api.ifpapinball.com/v1/tournament";
 
 let path = `${basePath}/search?api_key=${apiKey}&q=Flip+PGH`;

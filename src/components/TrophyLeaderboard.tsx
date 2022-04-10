@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { Icon, Table } from "semantic-ui-react";
 import { Standings } from "../common/@types/matchplay_types";
 import { AppContext, AppContextType } from "./AppContext";
-import { TrophyLegend } from "./TrophyLegend";
 
 interface medal {
   player: string;
@@ -66,7 +65,6 @@ function TrophyLeaderboard() {
           const path = `https://matchplay.events/data/tournaments/${label}/standings`;
           const response = await fetch(path);
           const data: Standings[] = await response.json();
-          // console.log(data[0].name, data[0].position);
           result.push.apply(result, getMedalists(data));
         })
       );
@@ -134,45 +132,77 @@ function TrophyLeaderboard() {
         <Table.Row>
           <Table.HeaderCell>Player</Table.HeaderCell>
           <Table.HeaderCell>Trophy Count</Table.HeaderCell>
-          <Table.HeaderCell>Value</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>
         {medalFinal.map((entry) => {
           let key = 0;
           const medalJsx = [];
-          for (let i = 0; i < entry.goldCount; i++) {
-            medalJsx.push(<Icon name="trophy" color="yellow" key={key} />);
+          if (entry.goldCount > 0) {
+            medalJsx.push(
+              <span style={{ whiteSpace: "nowrap" }}>
+                <Icon name="trophy" color="yellow" key={key} />
+                {entry.goldCount > 1 ? (
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "10px",
+                      marginRight: ".5rem",
+                    }}
+                  >
+                    {"x" + entry.goldCount}
+                  </span>
+                ) : null}
+              </span>
+            );
             key++;
           }
-          for (let i = 0; i < entry.silverCount; i++) {
-            medalJsx.push(<Icon name="trophy" color="grey" key={key} />);
+          if (entry.silverCount > 0) {
+            medalJsx.push(
+              <span style={{ whiteSpace: "nowrap" }}>
+                <Icon name="trophy" color="grey" key={key} />
+                {entry.silverCount > 1 ? (
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "10px",
+                      marginRight: ".5rem",
+                    }}
+                  >
+                    {"x" + entry.silverCount}
+                  </span>
+                ) : null}
+              </span>
+            );
             key++;
           }
-          for (let i = 0; i < entry.bronzeCount; i++) {
-            medalJsx.push(<Icon name="trophy" color="brown" key={key} />);
+          if (entry.bronzeCount > 0) {
+            medalJsx.push(
+              <span style={{ whiteSpace: "nowrap" }}>
+                <Icon name="trophy" color="brown" key={key} />
+                {entry.bronzeCount > 1 ? (
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "10px",
+                      marginRight: ".5rem",
+                    }}
+                  >
+                    {"x" + entry.bronzeCount}
+                  </span>
+                ) : null}
+              </span>
+            );
             key++;
           }
           return (
             <Table.Row key={entry.player}>
               <Table.Cell>{entry.player}</Table.Cell>
               <Table.Cell>{medalJsx}</Table.Cell>
-              <Table.Cell>
-                {entry.goldCount * 3 +
-                  entry.silverCount * 2 +
-                  entry.bronzeCount}
-              </Table.Cell>
             </Table.Row>
           );
         })}
       </Table.Body>
-      <Table.Footer>
-        <Table.Row>
-          <Table.HeaderCell colSpan={3}>
-            <TrophyLegend />
-          </Table.HeaderCell>
-        </Table.Row>
-      </Table.Footer>
     </Table>
   );
 }

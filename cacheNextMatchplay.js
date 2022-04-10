@@ -1,7 +1,8 @@
 const fs = require("fs");
 const fetch = require("node-fetch");
+require('dotenv').config();
 
-const token = "";
+const token = process.env.MATCHPLAY_TOKEN;  
 const basePath = "https://next.matchplay.events/api";
 
 const headers = {
