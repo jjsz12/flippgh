@@ -11,7 +11,7 @@ function Rules() {
         <li>
           3 strike knockout
           <ul>
-            <li>Random groups of 3 or 4 players are formed each round</li>
+            <li>Random groups of 2, 3, or 4 players are formed each round</li>
             <li>Bottom one or two players from each group receive a strike</li>
             <li>
               Players are eliminated from the tournament after receiving three
@@ -20,12 +20,13 @@ function Rules() {
           </ul>
         </li>
         <li>
-          Number of strikes per group varies based on different factors,
-          including total player count, venue closing time, average machine
-          playing time, etc. One strike given in three-player groups will be
-          preferred but may be altered to two strikes given in three-player
-          groups at the discretion of the tournament director due to these
-          factors.
+          Number of strikes per group and size of groups each round vary based
+          on different factors, including total player count, venue closing
+          time, average machine playing time, etc. Three or four player groups
+          and one strike given in three-player groups will be preferred but may
+          be altered to head-to-head two player group matches or two strikes
+          given in three-player groups at the discretion of the tournament
+          director due to these factors.
         </li>
         <li>
           Plunge extra balls

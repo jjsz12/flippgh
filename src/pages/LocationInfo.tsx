@@ -238,7 +238,12 @@ function LocationInfo() {
             <li>
               Notes:
               <ul>
-                <li>Open 4pm-midnight on tournament days</li>
+                <li>
+                  Open 4pm-midnight on tournament days
+                  <ul>
+                    <li>21+ only after 8pm</li>
+                  </ul>
+                </li>
                 <li>
                   Games are paid via game card; prices are given in "credits"
                   and vary based on amount loaded on card
@@ -246,7 +251,14 @@ function LocationInfo() {
                 <li>
                   Food and drinks are available for purchase (full service bar)
                 </li>
-                <li>Cashless establishment; only card payments are accepted</li>
+                <li>
+                  Cashless establishment; only card payments are accepted
+                  <ul>
+                    <li>No ATM is available on site</li>
+                    <li>Gift cards can be purchased with cash at the cage</li>
+                  </ul>
+                </li>
+
                 <li>
                   <b>
                     <i>
