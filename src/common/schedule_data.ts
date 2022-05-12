@@ -94,4 +94,12 @@ export const custom_schedule: ScheduleItem[] = [
     date: "2022-05-25",
     location: "Kickback Pinball Cafe",
   },
+  {
+    date: "2022-06-01",
+    location: "Pittsburgh Pinball Dojo",
+  },
+  {
+    date: "2022-06-08",
+    location: "Kickback Pinball Cafe",
+  },
 ];
