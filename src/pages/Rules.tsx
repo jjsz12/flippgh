@@ -50,7 +50,8 @@ function Rules() {
           </ul>
         </li>
         <li>
-          Payouts to top 3 players (60/30/10% -- rounded to a multiple of $5)
+          Payouts to top 3 players (60/30/10% -- rounded to a multiple of $5),
+          minus any IFPA fees if not covered by other means
         </li>
         <li>
           The{" "}

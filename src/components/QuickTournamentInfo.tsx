@@ -60,6 +60,9 @@ const getDirectionsLink = (location?: string) => {
   if (location === "Shorty's Pins x Pints") {
     return "https://goo.gl/maps/KJDz1vYmiPJbs3PV9";
   }
+  if (location === "Helicon Brewing (Oakdale)") {
+    return "https://goo.gl/maps/kdMdSSTVbUUw99D4A";
+  }
   return;
 };
 

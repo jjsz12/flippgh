@@ -1,284 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
+import { Accordion, AccordionTitleProps, Icon } from "semantic-ui-react";
 import ContentContainer from "../components/ContentContainer";
+import { CoopInfo } from "../components/location-info/CoopInfo";
+import { DojoInfo } from "../components/location-info/DojoInfo";
+import { HeliconInfo } from "../components/location-info/HeliconInfo";
+import { KickbackInfo } from "../components/location-info/KickbackInfo";
+import { ShortysInfo } from "../components/location-info/ShortysInfo";
 
 function LocationInfo() {
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  const handleClick = (
+    _: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    titleProps: AccordionTitleProps
+  ) => {
+    const { index } = titleProps;
+    if (index !== undefined) {
+      const newIndex = activeIndex === +index ? -1 : +index;
+      setActiveIndex(newIndex);
+    }
+  };
+
   return (
     <ContentContainer>
       <h1>{"Location Information"}</h1>
-      <ul>
-        <li>
-          <b>Kickback Pinball Cafe</b>
-          <ul>
-            <li>
-              Address: 4326 Butler St, Pittsburgh, PA 15201 [
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://goo.gl/maps/VxGNpVJoadYbCPQn7"
-              >
-                Google Maps
-              </a>
-              ]
-            </li>
-            <li>
-              Website:{" "}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.kickbackpgh.com/"
-              >
-                https://www.kickbackpgh.com/
-              </a>
-            </li>
-            <li>
-              Current game list: [
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://pinballmap.com/map?utf8=%E2%9C%93&by_location_id=3682&by_location_name=Kickback+Pinball+Cafe"
-              >
-                Pinball Map
-              </a>
-              ]
-            </li>
-            <li>
-              Notes:
-              <ul>
-                <li>Open 10am-11pm on tournament days</li>
-                <li>Games are coin drop; prices range from $.25 to $1</li>
-                <li>BYOB permitted; $5 corkage/storage fee</li>
-                <li>
-                  Food, coffee/espresso, and non-alcoholic drinks are available
-                  for purchase
-                </li>
-                <li>
-                  <b>
-                    <i>
-                      Special thanks to{" "}
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="http://pghpinball.com/"
-                      >
-                        PGH Pinball
-                      </a>{" "}
-                      for sponsoring the IFPA endorsement fees!
-                    </i>
-                  </b>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <b>Pittsburgh Pinball Dojo</b>
-          <ul>
-            <li>
-              Address: 2 N Balph Ave, Bellevue, PA 15202 [
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://goo.gl/maps/3Gx2gYpg3xuyaLucA"
-              >
-                Google Maps
-              </a>
-              ]
-            </li>
-            <li>
-              Website:{" "}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://pittsburghpinballdojo.com/"
-              >
-                https://pittsburghpinballdojo.com/
-              </a>
-            </li>
-            <li>
-              Current game list: [
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://pinballmap.com/map?utf8=%E2%9C%93&by_location_id=10790&by_location_name=Pittsburgh+Pinball+Dojo"
-              >
-                Pinball Map
-              </a>
-              ]
-            </li>
-            <li>
-              Notes:
-              <ul>
-                <li>Open 6-11pm on tournament days</li>
-                <li>
-                  $15 venue cover fee in addition to tournament entry fee ($20
-                  total); all games are on free play
-                </li>
-                <li>
-                  <s>Masks required</s> **Masks no longer required as of March
-                  16, 2022
-                </li>
-                <li>BYOB permitted (no additional fee)</li>
-                <li>BYO-Food permitted; snacks available for purchase</li>
-                <li>
-                  <b>
-                    <i>
-                      Special thanks to the Pittsburgh Pinball Dojo for
-                      sponsoring the IFPA endorsement fees!
-                    </i>
-                  </b>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <b>Coop De Ville</b>
-          <ul>
-            <li>
-              Address: 2305 Smallman St, Pittsburgh, PA 15222 [
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://goo.gl/maps/8zW4bUvXdtKB1v8f9"
-              >
-                Google Maps
-              </a>
-              ]
-            </li>
-            <li>
-              Website:{" "}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.coopdevillepgh.com/"
-              >
-                https://www.coopdevillepgh.com/
-              </a>
-            </li>
-            <li>
-              Current game list: [
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://pinballmap.com/map/?by_location_id=15006"
-              >
-                Pinball Map
-              </a>
-              ]
-            </li>
-            <li>
-              Notes:
-              <ul>
-                <li>Open 11:30am-close on tournament days</li>
-                <li>Games are coin drop; prices range from $.75 to $1</li>
-                <li>
-                  Food and drinks are available for purchase (full service
-                  coffee and drink bar)
-                </li>
-                <li>
-                  <b>
-                    <i>
-                      Special thanks to{" "}
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="http://pghpinball.com/"
-                      >
-                        PGH Pinball
-                      </a>{" "}
-                      for sponsoring the IFPA endorsement fees!
-                    </i>
-                  </b>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <b>Shorty's Pins x Pints</b>
-          <ul>
-            <li>
-              Address: 353 N Shore Dr, Pittsburgh, PA 15212 [
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://goo.gl/maps/KJDz1vYmiPJbs3PV9"
-              >
-                Google Maps
-              </a>
-              ]
-            </li>
-            <li>
-              Website:{" "}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.shortysx.com/pins-x-pints/north-shore"
-              >
-                https://www.shortysx.com/pins-x-pints/north-shore
-              </a>
-            </li>
-            <li>
-              Current game list: [
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://pinballmap.com/map/?by_location_id=17078"
-              >
-                Pinball Map
-              </a>
-              ]
-            </li>
-            <li>
-              Notes:
-              <ul>
-                <li>
-                  Open 4pm-midnight on tournament days
-                  <ul>
-                    <li>21+ only after 8pm</li>
-                  </ul>
-                </li>
-                <li>
-                  Games are paid via game card; prices are given in "credits"
-                  and vary based on amount loaded on card
-                </li>
-                <li>
-                  Food and drinks are available for purchase (full service bar)
-                </li>
-                <li>
-                  Cashless establishment; only card payments are accepted
-                  <ul>
-                    <li>No ATM is available on site</li>
-                    <li>Gift cards can be purchased with cash at the cage</li>
-                  </ul>
-                </li>
-
-                <li>
-                  <b>
-                    <i>
-                      Special thanks to{" "}
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="http://pghpinball.com/"
-                      >
-                        PGH Pinball
-                      </a>{" "}
-                      for sponsoring the IFPA endorsement fees!
-                    </i>
-                  </b>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <Accordion styled fluid>
+        <Accordion.Title
+          active={activeIndex === 0}
+          index={0}
+          onClick={handleClick}
+        >
+          <Icon name="dropdown" />
+          Kickback Pinball Cafe
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 0}>
+          <KickbackInfo />
+        </Accordion.Content>
+        <Accordion.Title
+          active={activeIndex === 1}
+          index={1}
+          onClick={handleClick}
+        >
+          <Icon name="dropdown" />
+          Pittsburgh Pinball Dojo
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 1}>
+          <DojoInfo />
+        </Accordion.Content>
+        <Accordion.Title
+          active={activeIndex === 2}
+          index={2}
+          onClick={handleClick}
+        >
+          <Icon name="dropdown" />
+          Coop De Ville
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 2}>
+          <CoopInfo />
+        </Accordion.Content>
+        <Accordion.Title
+          active={activeIndex === 3}
+          index={3}
+          onClick={handleClick}
+        >
+          <Icon name="dropdown" />
+          Shorty's Pins x Pints
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 3}>
+          <ShortysInfo />
+        </Accordion.Content>
+        <Accordion.Title
+          active={activeIndex === 4}
+          index={4}
+          onClick={handleClick}
+        >
+          <Icon name="dropdown" />
+          Helicon Brewing (Oakdale)
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 4}>
+          <HeliconInfo />
+        </Accordion.Content>
+      </Accordion>
     </ContentContainer>
   );
 }
