@@ -1,9 +1,10 @@
 import moment from "moment";
-import { useContext, useEffect, useReducer } from "react";
+import { useCallback, useContext, useEffect, useReducer } from "react";
 import { Table } from "semantic-ui-react";
 import json from "../common/matchplay_games.json";
 import { AppContext, AppContextType } from "./AppContext";
 import _ from "lodash";
+import { FilterItem, TableFilter } from "./TableFilter";
 
 interface MachineStatEntry {
   name: string;
@@ -22,6 +23,7 @@ const reducer = (state: any, action: any) => {
         return {
           ...state,
           machines: state.machines.slice().reverse(),
+          filteredMachines: state.filteredMachines.slice().reverse(),
           direction:
             state.direction === "ascending" ? "descending" : "ascending",
         };
@@ -30,6 +32,7 @@ const reducer = (state: any, action: any) => {
         ...state,
         column: action.column,
         machines: _.sortBy(state.machines, [action.column]),
+        filteredMachines: _.sortBy(state.filteredMachines, [action.column]),
         direction: "ascending",
       };
     case "SET_LOCATION_MAP":
@@ -41,6 +44,27 @@ const reducer = (state: any, action: any) => {
       return {
         ...state,
         machines: action.machines,
+        filteredMachines: action.machines.filter(
+          (o: MachineStatEntry) =>
+            state.filters.length === 0 ||
+            state.filters.some(
+              (o2: FilterItem) =>
+                o2.category === "location" && o2.text === o.location
+            )
+        ),
+      };
+    case "SET_FILTERS":
+      return {
+        ...state,
+        filters: action.filters,
+        filteredMachines: state.machines.filter(
+          (o: MachineStatEntry) =>
+            action.filters.length === 0 ||
+            action.filters.some(
+              (o2: FilterItem) =>
+                o2.category === "location" && o2.text === o.location
+            )
+        ),
       };
     default:
       throw new Error();
@@ -50,11 +74,13 @@ const reducer = (state: any, action: any) => {
 function MachineStats() {
   const [state, dispatch] = useReducer(reducer, {
     machines: [],
+    filteredMachines: [],
     column: "name",
     direction: "ascending",
     locationMap: {},
+    filters: [],
   });
-  const { machines, column, direction, locationMap } = state;
+  const { machines, filteredMachines, column, direction, locationMap } = state;
 
   const { schedule }: AppContextType = useContext(AppContext);
 
@@ -98,68 +124,85 @@ function MachineStats() {
     machineStats = _.sortBy(machineStats, "name");
     dispatch({ type: "SET_MACHINES", machines: machineStats });
   }, [locationMap]);
+
+  const locations = new Set<string>();
+  machines.forEach((o: MachineStatEntry) => {
+    locations.add(o.location);
+  });
+
+  const setFilters = useCallback((filters: FilterItem[]) => {
+    dispatch({ type: "SET_FILTERS", filters });
+  }, [dispatch]);
+
   return (
-    <Table celled unstackable sortable>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell
-            sorted={column === "name" ? direction : null}
-            onClick={() => dispatch({ type: "CHANGE_SORT", column: "name" })}
-          >
-            Machine
-          </Table.HeaderCell>
-          <Table.HeaderCell
-            sorted={column === "location" ? direction : null}
-            onClick={() =>
-              dispatch({ type: "CHANGE_SORT", column: "location" })
-            }
-          >
-            Location
-          </Table.HeaderCell>
-          <Table.HeaderCell
-            sorted={column === "playCount" ? direction : null}
-            onClick={() =>
-              dispatch({ type: "CHANGE_SORT", column: "playCount" })
-            }
-          >
-            Game Count
-          </Table.HeaderCell>
-          <Table.HeaderCell
-            sorted={column === "playerCount" ? direction : null}
-            onClick={() =>
-              dispatch({ type: "CHANGE_SORT", column: "playerCount" })
-            }
-          >
-            Player Count
-          </Table.HeaderCell>
-          <Table.HeaderCell
-            sorted={column === "avgSeconds" ? direction : null}
-            onClick={() =>
-              dispatch({ type: "CHANGE_SORT", column: "avgSeconds" })
-            }
-          >
-            Avg. Time / Player
-          </Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        {machines.map((o: MachineStatEntry) => {
-          const avgSeconds = o.totalPlaytimeSeconds / o.playerCount;
-          const avgTime = moment.duration(avgSeconds, "seconds");
-          return (
-            <Table.Row key={o.name + o.location}>
-              <Table.Cell>{o.name}</Table.Cell>
-              <Table.Cell>{o.location}</Table.Cell>
-              <Table.Cell>{o.playCount}</Table.Cell>
-              <Table.Cell>{o.playerCount}</Table.Cell>
-              <Table.Cell>
-                {moment.utc(avgTime.as("milliseconds")).format("m:ss")}
-              </Table.Cell>
-            </Table.Row>
-          );
-        })}
-      </Table.Body>
-    </Table>
+    <>
+      <TableFilter locations={locations} setFilters={setFilters} />
+      <div style={{ paddingTop: "1rem", fontStyle: "italic" }}>
+        {filteredMachines.length} of {machines.length} machines currently
+        visible.
+      </div>
+      <Table celled unstackable sortable>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell
+              sorted={column === "name" ? direction : null}
+              onClick={() => dispatch({ type: "CHANGE_SORT", column: "name" })}
+            >
+              Machine
+            </Table.HeaderCell>
+            <Table.HeaderCell
+              sorted={column === "location" ? direction : null}
+              onClick={() =>
+                dispatch({ type: "CHANGE_SORT", column: "location" })
+              }
+            >
+              Location
+            </Table.HeaderCell>
+            <Table.HeaderCell
+              sorted={column === "playCount" ? direction : null}
+              onClick={() =>
+                dispatch({ type: "CHANGE_SORT", column: "playCount" })
+              }
+            >
+              Game Count
+            </Table.HeaderCell>
+            <Table.HeaderCell
+              sorted={column === "playerCount" ? direction : null}
+              onClick={() =>
+                dispatch({ type: "CHANGE_SORT", column: "playerCount" })
+              }
+            >
+              Player Count
+            </Table.HeaderCell>
+            <Table.HeaderCell
+              sorted={column === "avgSeconds" ? direction : null}
+              onClick={() =>
+                dispatch({ type: "CHANGE_SORT", column: "avgSeconds" })
+              }
+            >
+              Avg. Time / Player
+            </Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {filteredMachines.map((o: MachineStatEntry) => {
+            const avgSeconds = o.totalPlaytimeSeconds / o.playerCount;
+            const avgTime = moment.duration(avgSeconds, "seconds");
+            return (
+              <Table.Row key={o.name + o.location}>
+                <Table.Cell>{o.name}</Table.Cell>
+                <Table.Cell>{o.location}</Table.Cell>
+                <Table.Cell>{o.playCount}</Table.Cell>
+                <Table.Cell>{o.playerCount}</Table.Cell>
+                <Table.Cell>
+                  {moment.utc(avgTime.as("milliseconds")).format("m:ss")}
+                </Table.Cell>
+              </Table.Row>
+            );
+          })}
+        </Table.Body>
+      </Table>
+    </>
   );
 }
 

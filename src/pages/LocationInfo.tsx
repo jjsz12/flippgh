@@ -21,65 +21,48 @@ function LocationInfo() {
     }
   };
 
+  const locations = [
+    {
+      title: "Coop De Ville",
+      component: <CoopInfo />,
+    },
+    {
+      title: "Helicon Brewing (Oakdale)",
+      component: <HeliconInfo />,
+    },
+    {
+      title: "Kickback Pinball Cafe",
+      component: <KickbackInfo />,
+    },
+    {
+      title: "Pittsburgh Pinball Dojo",
+      component: <DojoInfo />,
+    },
+    {
+      title: "Shorty's Pins x Pints",
+      component: <ShortysInfo />,
+    },
+  ];
+
   return (
     <ContentContainer>
       <h1>{"Location Information"}</h1>
       <Accordion styled fluid>
-        <Accordion.Title
-          active={activeIndex === 0}
-          index={0}
-          onClick={handleClick}
-        >
-          <Icon name="dropdown" />
-          Kickback Pinball Cafe
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 0}>
-          <KickbackInfo />
-        </Accordion.Content>
-        <Accordion.Title
-          active={activeIndex === 1}
-          index={1}
-          onClick={handleClick}
-        >
-          <Icon name="dropdown" />
-          Pittsburgh Pinball Dojo
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 1}>
-          <DojoInfo />
-        </Accordion.Content>
-        <Accordion.Title
-          active={activeIndex === 2}
-          index={2}
-          onClick={handleClick}
-        >
-          <Icon name="dropdown" />
-          Coop De Ville
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 2}>
-          <CoopInfo />
-        </Accordion.Content>
-        <Accordion.Title
-          active={activeIndex === 3}
-          index={3}
-          onClick={handleClick}
-        >
-          <Icon name="dropdown" />
-          Shorty's Pins x Pints
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 3}>
-          <ShortysInfo />
-        </Accordion.Content>
-        <Accordion.Title
-          active={activeIndex === 4}
-          index={4}
-          onClick={handleClick}
-        >
-          <Icon name="dropdown" />
-          Helicon Brewing (Oakdale)
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 4}>
-          <HeliconInfo />
-        </Accordion.Content>
+        {locations.map((item, index) => (
+          <>
+            <Accordion.Title
+              active={activeIndex === index}
+              index={index}
+              onClick={handleClick}
+            >
+              <Icon name="dropdown" />
+              {item.title}
+            </Accordion.Title>
+            <Accordion.Content active={activeIndex === index}>
+              {item.component}
+            </Accordion.Content>
+          </>
+        ))}
       </Accordion>
     </ContentContainer>
   );

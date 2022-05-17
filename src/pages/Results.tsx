@@ -6,7 +6,7 @@ import { MachineStats } from "../components/MachineStats";
 import { ChampionTable } from "../components/ChampionTable";
 
 function Results() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
 
   const handleClick = (
     _: React.MouseEvent<HTMLDivElement, MouseEvent>,
