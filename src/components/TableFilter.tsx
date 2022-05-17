@@ -92,7 +92,9 @@ export const TableFilter = ({
       </div>
       <div
         style={{
-          marginTop: open ? "1rem" : "auto",
+          marginTop: open ? "0.5rem" : "auto",
+          marginLeft: open ? "2rem" : "auto",
+          marginBottom: open ? "0.5rem" : "auto",
           visibility: open ? "visible" : "hidden",
           maxHeight: open ? "100px" : 0,
           opacity: open ? 1 : 0,

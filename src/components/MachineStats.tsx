@@ -5,6 +5,7 @@ import json from "../common/matchplay_games.json";
 import { AppContext, AppContextType } from "./AppContext";
 import _ from "lodash";
 import { FilterItem, TableFilter } from "./TableFilter";
+import { TableDataExport } from "./TableDataExport";
 
 interface MachineStatEntry {
   name: string;
@@ -80,7 +81,14 @@ function MachineStats() {
     locationMap: {},
     filters: [],
   });
-  const { machines, filteredMachines, column, direction, locationMap } = state;
+  const {
+    machines,
+    filteredMachines,
+    column,
+    direction,
+    locationMap,
+    filters,
+  } = state;
 
   const { schedule }: AppContextType = useContext(AppContext);
 
@@ -130,13 +138,56 @@ function MachineStats() {
     locations.add(o.location);
   });
 
-  const setFilters = useCallback((filters: FilterItem[]) => {
-    dispatch({ type: "SET_FILTERS", filters });
-  }, [dispatch]);
+  const setFilters = useCallback(
+    (filters: FilterItem[]) => {
+      dispatch({ type: "SET_FILTERS", filters });
+    },
+    [dispatch]
+  );
+
+  const generateCsvData = () => {
+    const headers = [
+      "Machine",
+      "Location",
+      "Game Count",
+      "Player Count",
+      "Avg. Time / Player",
+    ];
+    const content = [headers.join(",") + "\n"];
+    filteredMachines.forEach((o: MachineStatEntry) => {
+      const avgTime = moment.duration(o.avgSeconds, "seconds");
+      const avgTimeDisplay = moment
+        .utc(avgTime.as("milliseconds"))
+        .format("m:ss");
+      const row = [
+        o.name,
+        o.location,
+        o.playCount,
+        o.playerCount,
+        avgTimeDisplay,
+      ];
+      content.push(row.join(",") + "\n");
+    });
+    return content;
+  };
+
+  const getFilenamePrefix = () => {
+    let prefix = "FlipPGHMachineStats";
+    filters.forEach((item: FilterItem) => {
+      if (item.category === "location") {
+        prefix += "_" + item.text;
+      }
+    });
+    return prefix;
+  };
 
   return (
     <>
       <TableFilter locations={locations} setFilters={setFilters} />
+      <TableDataExport
+        generateData={generateCsvData}
+        filenamePrefix={getFilenamePrefix()}
+      />
       <div style={{ paddingTop: "1rem", fontStyle: "italic" }}>
         {filteredMachines.length} of {machines.length} machines currently
         visible.
