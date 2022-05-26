@@ -105,28 +105,30 @@ function MachineStats() {
   useEffect(() => {
     let machineStats: MachineStatEntry[] = [];
     json.forEach((entry) => {
-      const existingEntry = machineStats.find((existingEntry) => {
-        return (
-          existingEntry.name === entry.arena.name &&
-          existingEntry.location === locationMap[entry.tournamentId]
-        );
-      });
-      if (existingEntry) {
-        existingEntry.playCount += 1;
-        existingEntry.playerCount += entry.players.length;
-        existingEntry.totalPlaytimeSeconds += entry.duration;
-        existingEntry.avgSeconds =
-          existingEntry.totalPlaytimeSeconds / existingEntry.playerCount;
-      } else {
-        const newEntry = {
-          name: entry.arena.name,
-          location: locationMap[entry.tournamentId],
-          playCount: 1,
-          playerCount: entry.players.length,
-          totalPlaytimeSeconds: entry.duration,
-          avgSeconds: entry.duration / entry.players.length,
-        };
-        machineStats.push(newEntry);
+      if (entry && entry.arena) {
+        const existingEntry = machineStats.find((existingEntry) => {
+          return (
+            existingEntry.name === entry.arena.name &&
+            existingEntry.location === locationMap[entry.tournamentId]
+          );
+        });
+        if (existingEntry) {
+          existingEntry.playCount += 1;
+          existingEntry.playerCount += entry.players.length;
+          existingEntry.totalPlaytimeSeconds += entry.duration;
+          existingEntry.avgSeconds =
+            existingEntry.totalPlaytimeSeconds / existingEntry.playerCount;
+        } else {
+          const newEntry = {
+            name: entry.arena.name,
+            location: locationMap[entry.tournamentId],
+            playCount: 1,
+            playerCount: entry.players.length,
+            totalPlaytimeSeconds: entry.duration,
+            avgSeconds: entry.duration / entry.players.length,
+          };
+          machineStats.push(newEntry);
+        }
       }
     });
     machineStats = _.sortBy(machineStats, "name");
