@@ -39,7 +39,8 @@ function Rules() {
         </li>
         <li>
           If a variety of machine eras are available, game selection each round
-          will alternate between groups of older and newer games
+          will alternate between groups of fast games (majority EM/SS games) and
+          slow games (majority DMD/LCD games)
           <ul>
             <li>
               Note: Machines included in the tournament and the strict
