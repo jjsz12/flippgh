@@ -3,7 +3,7 @@ export interface ScheduleItem {
   location?: string;
   ifpa_link?: string;
   ifpa_points?: string;
-  matchplay_tournament_id?: number
+  matchplay_tournament_id?: number;
   matchplay_url_label?: string;
   matchplay_link?: string;
   matchplay_winner?: string;
@@ -137,5 +137,27 @@ export const custom_schedule: ScheduleItem[] = [
   {
     date: "2022-08-10",
     location: "Pittsburgh Pinball Dojo",
+  },
+  {
+    date: "2022-08-17",
+    location: "Kickback Pinball Cafe",
+  },
+  {
+    date: "2022-08-24",
+    location: "Pittsburgh Pinball Dojo",
+  },
+  {
+    date: "2022-08-31",
+    location: "Location TBD",
+  },
+  {
+    date: "2022-09-07",
+    location: "Pittsburgh Pinball Dojo",
+  },
+  {
+    date: "2022-09-14",
+    no_tournament_scheduled: true,
+    no_tournament_msg:
+      "No Flip PGH tournament this week (stay tuned for more details...)",
   },
 ];
