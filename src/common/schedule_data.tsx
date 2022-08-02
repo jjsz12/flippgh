@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface ScheduleItem {
   date: string;
   location?: string;
@@ -9,6 +11,7 @@ export interface ScheduleItem {
   matchplay_winner?: string;
   no_tournament_scheduled?: boolean;
   no_tournament_msg?: string;
+  no_tournament_msg_detail?: ReactNode;
   status?: string;
 }
 
@@ -148,7 +151,7 @@ export const custom_schedule: ScheduleItem[] = [
   },
   {
     date: "2022-08-31",
-    location: "Location TBD",
+    location: "Kickback Pinball Cafe",
   },
   {
     date: "2022-09-07",
@@ -157,7 +160,20 @@ export const custom_schedule: ScheduleItem[] = [
   {
     date: "2022-09-14",
     no_tournament_scheduled: true,
-    no_tournament_msg:
-      "No Flip PGH tournament this week (stay tuned for more details...)",
+    no_tournament_msg: "No Flip PGH tournament this week",
+    no_tournament_msg_detail: (
+      <>
+        Pinball Profile: "Played in America" tour: Kickback Pinball Cafe, Wed.,
+        Sept. 14/22 [
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.pinballprofile.com/event/played-in-america-tour-kickback-pinball-cafe-wed-sept-14-22/"
+        >
+          Details/Registration
+        </a>
+        ]
+      </>
+    ),
   },
 ];

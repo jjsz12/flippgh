@@ -13,6 +13,9 @@ const renderDateListItem = (dates: ScheduleItem[]) => {
       return (
         <li key={dateString}>
           {dateString} - {o.no_tournament_msg}
+          <ul>
+            <li>{o.no_tournament_msg_detail}</li>
+          </ul>
         </li>
       );
     }
