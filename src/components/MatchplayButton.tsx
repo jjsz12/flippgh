@@ -2,19 +2,28 @@ import { Button } from "semantic-ui-react";
 
 interface MatchplayButtonProps {
   link?: string;
+  displayText?: string;
+  primary?: boolean;
+  compact?: boolean;
 }
 
-function MatchplayButton({ link }: MatchplayButtonProps) {
+function MatchplayButton({
+  link,
+  displayText = "Go to Matchplay",
+  primary = false,
+  compact = false,
+}: MatchplayButtonProps) {
   return (
     <Button
-      primary
+      primary={primary}
+      compact={compact}
       as="a"
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      style={{ marginBottom: "0.5rem" }}
+      style={{ margin: '.25rem 0'}}
     >
-      Go to Matchplay
+      {displayText}
     </Button>
   );
 }

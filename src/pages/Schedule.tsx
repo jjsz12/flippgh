@@ -1,46 +1,20 @@
 import moment from "moment";
 import { useContext, useState } from "react";
-import { Accordion, Icon } from "semantic-ui-react";
+import { Accordion, Icon, Table } from "semantic-ui-react";
 import { ScheduleItem } from "../common/schedule_data";
+import { getDirectionsLink } from "../common/utils";
 import { AppContext, AppContextType } from "../components/AppContext";
 import ContentContainer from "../components/ContentContainer";
+import DirectionsButton from "../components/DirectionsButton";
+import MatchplayButton from "../components/MatchplayButton";
 import { TextPlaceholder } from "../components/TextPlaceholder";
-
-const renderDateListItem = (dates: ScheduleItem[]) => {
-  return dates.map((o) => {
-    const dateString = moment(o.date).format("ddd, M/D/YYYY");
-    if (o.no_tournament_scheduled) {
-      return (
-        <li key={dateString}>
-          {dateString} - {o.no_tournament_msg}
-          <ul>
-            <li>{o.no_tournament_msg_detail}</li>
-          </ul>
-        </li>
-      );
-    }
-    if (o.matchplay_link) {
-      return (
-        <li key={dateString}>
-          {dateString} (7pm) - {o.location} [
-          <a target="_blank" rel="noopener noreferrer" href={o.matchplay_link}>
-            Matchplay
-          </a>
-          ]
-        </li>
-      );
-    }
-    return (
-      <li key={dateString}>
-        {dateString} - {o.location}
-      </li>
-    );
-  });
-};
+import { useWindowSize } from "../hooks/useWindowSize";
 
 function Schedule() {
   const { schedule }: AppContextType = useContext(AppContext);
   const [isPastDatesOpen, setPastDatesOpen] = useState<boolean>(false);
+
+  const size = useWindowSize();
 
   if (schedule && schedule.length === 0) {
     return (
@@ -57,18 +31,88 @@ function Schedule() {
       return moment(value.date) >= moment().startOf("day");
     });
 
-    const pastDates: ScheduleItem[] = schedule.filter((value) => {
+    const pastDates: ScheduleItem[] = schedule
+      .filter((value) => {
+        return (
+          moment(value.date) < moment().startOf("day") &&
+          !value.no_tournament_scheduled
+        );
+      })
+      .reverse();
+
+    const renderTable = (
+      dates: ScheduleItem[],
+      includeTime: boolean = true,
+      includeDirectionsButton: boolean = true,
+      initialRows?: number
+    ) => {
       return (
-        moment(value.date) < moment().startOf("day") &&
-        !value.no_tournament_scheduled
+        <Table basic="very" celled collapsing>
+          {size.width && size.width > 640 ? (
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>Date</Table.HeaderCell>
+                <Table.HeaderCell>Location</Table.HeaderCell>
+                {includeTime ? <Table.HeaderCell>Time</Table.HeaderCell> : null}
+                <Table.HeaderCell>Format</Table.HeaderCell>
+                <Table.HeaderCell></Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+          ) : null}
+          <Table.Body>
+            {dates.map((o) => {
+              const dateString = moment(o.date).format("ddd, M/D/YYYY");
+              if (o.no_tournament_scheduled) {
+                return (
+                  <Table.Row>
+                    <Table.Cell>{dateString}</Table.Cell>
+                    <Table.Cell
+                      colSpan="4"
+                      style={{
+                        backgroundColor: "#EAEAEA",
+                        paddingRight: "2rem",
+                      }}
+                    >
+                      {o.no_tournament_msg_detail}
+                    </Table.Cell>
+                  </Table.Row>
+                );
+              }
+              return (
+                <Table.Row>
+                  <Table.Cell>{dateString}</Table.Cell>
+                  <Table.Cell>{o.location}</Table.Cell>
+                  {includeTime ? <Table.Cell>7pm</Table.Cell> : null}
+                  <Table.Cell>{o.format}</Table.Cell>
+                  <Table.Cell>
+                    {o.matchplay_link ? (
+                      <MatchplayButton
+                        link={o.matchplay_link}
+                        displayText="Matchplay"
+                        compact
+                      />
+                    ) : null}
+                    {o.location && includeDirectionsButton ? (
+                      <DirectionsButton
+                        link={getDirectionsLink(o.location)}
+                        displayText="Directions"
+                        compact
+                      />
+                    ) : null}
+                  </Table.Cell>
+                </Table.Row>
+              );
+            })}
+          </Table.Body>
+        </Table>
       );
-    });
+    };
 
     return (
       <ContentContainer>
         <h1>Upcoming Schedule</h1>
-        <ul>{renderDateListItem(futureDates)}</ul>
-        <Accordion>
+        <div style={{ margin: "3rem 0" }}>{renderTable(futureDates)}</div>
+        <Accordion styled fluid>
           <Accordion.Title
             active={isPastDatesOpen}
             index={0}
@@ -80,7 +124,7 @@ function Schedule() {
             <b>Past Dates</b>
           </Accordion.Title>
           <Accordion.Content active={isPastDatesOpen}>
-            {renderDateListItem(pastDates)}
+            {renderTable(pastDates, false, false)}
           </Accordion.Content>
         </Accordion>
       </ContentContainer>

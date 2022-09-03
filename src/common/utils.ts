@@ -46,3 +46,22 @@ export const findIfpaPoints = (
   });
   return matchedResult?.points;
 };
+
+export const getDirectionsLink = (location?: string) => {
+  if (location === "Kickback Pinball Cafe") {
+    return "https://goo.gl/maps/VxGNpVJoadYbCPQn7";
+  }
+  if (location === "Pittsburgh Pinball Dojo") {
+    return "https://goo.gl/maps/3Gx2gYpg3xuyaLucA";
+  }
+  if (location === "Coop De Ville") {
+    return "https://goo.gl/maps/8zW4bUvXdtKB1v8f9";
+  }
+  if (location === "Shorty's Pins x Pints") {
+    return "https://goo.gl/maps/KJDz1vYmiPJbs3PV9";
+  }
+  if (location === "Helicon Brewing (Oakdale)") {
+    return "https://goo.gl/maps/kdMdSSTVbUUw99D4A";
+  }
+  return;
+};

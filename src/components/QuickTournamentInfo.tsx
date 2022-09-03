@@ -3,6 +3,7 @@ import { useContext } from "react";
 import Countdown, { CountdownRenderProps } from "react-countdown";
 import { Segment } from "semantic-ui-react";
 import { ScheduleItem } from "../common/schedule_data";
+import { getDirectionsLink } from "../common/utils";
 import { AppContext, AppContextType } from "./AppContext";
 import DirectionsButton from "./DirectionsButton";
 import MatchplayButton from "./MatchplayButton";
@@ -45,25 +46,6 @@ const countdownRenderer = ({
     );
   }
   return null;
-};
-
-const getDirectionsLink = (location?: string) => {
-  if (location === "Kickback Pinball Cafe") {
-    return "https://goo.gl/maps/VxGNpVJoadYbCPQn7";
-  }
-  if (location === "Pittsburgh Pinball Dojo") {
-    return "https://goo.gl/maps/3Gx2gYpg3xuyaLucA";
-  }
-  if (location === "Coop De Ville") {
-    return "https://goo.gl/maps/8zW4bUvXdtKB1v8f9";
-  }
-  if (location === "Shorty's Pins x Pints") {
-    return "https://goo.gl/maps/KJDz1vYmiPJbs3PV9";
-  }
-  if (location === "Helicon Brewing (Oakdale)") {
-    return "https://goo.gl/maps/kdMdSSTVbUUw99D4A";
-  }
-  return;
 };
 
 function QuickTournamentInfo() {
@@ -121,8 +103,8 @@ function QuickTournamentInfo() {
                 renderer={countdownRenderer}
               />
             ) : null}
-            <MatchplayButton link={scheduleItem.matchplay_link} />
-            <DirectionsButton link={directionsLink} />
+            <MatchplayButton link={scheduleItem.matchplay_link} primary />
+            <DirectionsButton link={directionsLink} primary />
           </Segment>
         </div>
       );

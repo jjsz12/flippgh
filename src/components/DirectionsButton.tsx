@@ -2,20 +2,29 @@ import { Button } from "semantic-ui-react";
 
 interface DirectionsButtonProps {
   link?: string;
+  displayText?: string;
+  primary?: boolean;
+  compact?: boolean;
 }
 
-function DirectionsButton({ link }: DirectionsButtonProps) {
+function DirectionsButton({
+  link,
+  displayText = "Get Directions",
+  primary = false,
+  compact = false,
+}: DirectionsButtonProps) {
   if (link) {
     return (
       <Button
-        primary
+        primary={primary}
+        compact={compact}
         as="a"
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        style={{ marginBottom: "0.5rem" }}
+        style={{ margin: '.25rem'}}
       >
-        Get Directions
+        {displayText}
       </Button>
     );
   }
