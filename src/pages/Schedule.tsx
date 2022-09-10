@@ -2,10 +2,11 @@ import moment from "moment";
 import { useContext, useState } from "react";
 import { Accordion, Icon, Table } from "semantic-ui-react";
 import { ScheduleItem } from "../common/schedule_data";
-import { getDirectionsLink } from "../common/utils";
+import { getDirectionsLink, getFormatInfo } from "../common/utils";
 import { AppContext, AppContextType } from "../components/AppContext";
 import ContentContainer from "../components/ContentContainer";
 import DirectionsButton from "../components/DirectionsButton";
+import { InfoModal } from "../components/InfoModal";
 import MatchplayButton from "../components/MatchplayButton";
 import { TextPlaceholder } from "../components/TextPlaceholder";
 import { useWindowSize } from "../hooks/useWindowSize";
@@ -83,7 +84,20 @@ function Schedule() {
                   <Table.Cell>{dateString}</Table.Cell>
                   <Table.Cell>{o.location}</Table.Cell>
                   {includeTime ? <Table.Cell>7pm</Table.Cell> : null}
-                  <Table.Cell>{o.format}</Table.Cell>
+                  <Table.Cell>
+                    <span
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      {o.format}
+                      <InfoModal
+                        header={o.format}
+                        content={getFormatInfo(o.format)}
+                      />
+                    </span>
+                  </Table.Cell>
                   <Table.Cell>
                     {o.matchplay_link ? (
                       <MatchplayButton

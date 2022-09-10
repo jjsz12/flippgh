@@ -96,6 +96,8 @@ function QuickTournamentInfo() {
             <br />
             <b>Start time:</b> 7pm
             <br />
+            <b>Format: </b> {scheduleItem.format}
+            <br />
             <br />
             {showCountdown ? (
               <Countdown

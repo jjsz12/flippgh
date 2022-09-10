@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-type FormatType =
+export type FormatType =
   | "3 Strike Knockout"
   | "Fair Strike Knockout (6 strikes)"
   | "Flip Frenzy (2 hours)"
