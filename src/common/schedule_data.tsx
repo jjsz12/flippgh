@@ -237,59 +237,19 @@ export const custom_schedule: ScheduleItem[] = [
     location: "Pittsburgh Pinball Dojo",
     format: "Flip Frenzy (2 hours)",
   },
-  // {
-  //   date: "2022-10-19",
-  //   location: "Kickback or Coop",
-  //   format: "",
-  // },
-  // {
-  //   date: "2022-10-26",
-  //   location: "Kickback or Coop",
-  //   format: "",
-  // },
+  {
+    date: "2022-10-19",
+    location: "Kickback Pinball Cafe",
+    format: "3 Strike Knockout",
+  },
   {
     date: "2022-11-02",
     location: "Helicon Brewing (Oakdale)",
     format: "Format TBD",
   },
-  // {
-  //   date: "2022-11-09",
-  //   location: "Dojo?",
-  //   format: "",
-  // },
-  // {
-  //   date: "2022-11-16",
-  //   location: "Kickback? Shorty's? Pins?",
-  //   format: "",
-  // },
-  // {
-  //   date: "2022-11-23",
-  //   location: "Cancel this week? Pins? Coop? Kickback?",
-  //   format: "",
-  // },
-  // {
-  //   date: "2022-11-30",
-  //   location: "Dojo? Kickback?",
-  //   format: "",
-  // },
   {
     date: "2022-12-07",
     location: "Helicon Brewing (Oakdale)",
     format: "Format TBD",
   },
-  // {
-  //   date: "2022-12-14",
-  //   location: "Kickback? Dojo?",
-  //   format: "",
-  // },
-  // {
-  //   date: "2022-12-21",
-  //   location: "Coop? Pins?",
-  //   format: "",
-  // },
-  // {
-  //   date: "2022-12-28",
-  //   location: "Dojo? Kickback?",
-  //   format: "",
-  // },
 ];
