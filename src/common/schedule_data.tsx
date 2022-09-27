@@ -1,5 +1,13 @@
 import { ReactNode } from "react";
 
+export type LocationType =
+  | "Kickback Pinball Cafe"
+  | "Pittsburgh Pinball Dojo"
+  | "Coop De Ville"
+  | "Shorty's Pins x Pints"
+  | "Helicon Brewing (Oakdale)"
+  | "Location TBD";
+
 export type FormatType =
   | "3 Strike Knockout"
   | "Fair Strike Knockout (6 strikes)"
@@ -8,7 +16,7 @@ export type FormatType =
 
 export interface ScheduleItem {
   date: string;
-  location?: string;
+  location?: LocationType;
   ifpa_link?: string;
   ifpa_points?: string;
   matchplay_tournament_id?: number;
@@ -243,13 +251,53 @@ export const custom_schedule: ScheduleItem[] = [
     format: "3 Strike Knockout",
   },
   {
+    date: "2022-10-26",
+    location: "Pittsburgh Pinball Dojo",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
+  {
     date: "2022-11-02",
     location: "Helicon Brewing (Oakdale)",
     format: "Format TBD",
   },
   {
+    date: "2022-11-09",
+    location: "Kickback Pinball Cafe",
+    format: "Format TBD",
+  },
+  {
+    date: "2022-11-16",
+    location: "Pittsburgh Pinball Dojo",
+    format: "Format TBD",
+  },
+  {
+    date: "2022-11-23",
+    location: "Location TBD",
+    format: "Format TBD",
+  },
+  {
+    date: "2022-11-30",
+    location: "Location TBD",
+    format: "Format TBD",
+  },
+  {
     date: "2022-12-07",
     location: "Helicon Brewing (Oakdale)",
+    format: "Format TBD",
+  },
+  {
+    date: "2022-12-14",
+    location: "Location TBD",
+    format: "Format TBD",
+  },
+  {
+    date: "2022-12-21",
+    location: "Location TBD",
+    format: "Format TBD",
+  },
+  {
+    date: "2022-12-28",
+    location: "Location TBD",
     format: "Format TBD",
   },
 ];
