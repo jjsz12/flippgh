@@ -258,17 +258,17 @@ export const custom_schedule: ScheduleItem[] = [
   {
     date: "2022-11-02",
     location: "Helicon Brewing (Oakdale)",
-    format: "Format TBD",
+    format: "Fair Strike Knockout (6 strikes)",
   },
   {
     date: "2022-11-09",
     location: "Kickback Pinball Cafe",
-    format: "Format TBD",
+    format: "Fair Strike Knockout (6 strikes)",
   },
   {
     date: "2022-11-16",
     location: "Pittsburgh Pinball Dojo",
-    format: "Format TBD",
+    format: "Flip Frenzy (2 hours)",
   },
   {
     date: "2022-11-23",
