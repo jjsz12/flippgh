@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useWindowSize } from "../hooks/useWindowSize";
 import Home from "../pages/Home";
 import LocationInfo from "../pages/LocationInfo";
@@ -22,16 +22,14 @@ function FlipPghApp() {
 
   return (
     <AppProvider>
-      <Router>
-        {renderMenu()}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/schedule" element={<Schedule />} />
-          <Route path="/locations" element={<LocationInfo />} />
-          <Route path="/rules" element={<Rules />} />
-          <Route path="/results" element={<Results />} />
-        </Routes>
-      </Router>
+      {renderMenu()}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/schedule" element={<Schedule />} />
+        <Route path="/locations" element={<LocationInfo />} />
+        <Route path="/rules" element={<Rules />} />
+        <Route path="/results" element={<Results />} />
+      </Routes>
     </AppProvider>
   );
 }

@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'semantic-ui-css/semantic.min.css'
-import FlipPghApp from './components/FlipPghApp';
 import reportWebVitals from './reportWebVitals';
+import { App } from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <FlipPghApp />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

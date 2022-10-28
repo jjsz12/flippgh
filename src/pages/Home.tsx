@@ -45,6 +45,13 @@ function Home() {
           <Link to="/results">{"Go to Results & Stats"}</Link>
         </li>
       </ul>
+      <br />
+      <h5>Pittsburgh Pinball League</h5>
+      <ul>
+        <li>
+          <Link to="/ppl">{"Go to Overall PPL Standings"}</Link>
+        </li>
+      </ul>
     </ContentContainer>
   );
 }
