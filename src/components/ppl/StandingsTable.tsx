@@ -15,6 +15,9 @@ interface PointsByWeek {
 export interface StandingsEntry {
   player: string;
   totalPoints: number;
+  averagePoints: number;
+  maxWeekScore: number;
+  secondMaxWeekScore: number;
   adjustedPoints?: number;
   pointsByWeek?: PointsByWeek;
 }

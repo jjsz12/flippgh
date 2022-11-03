@@ -22,12 +22,26 @@ seasonIds.forEach((id) => {
   });
 });
 
-const path = `${basePath}/dates`;
+let path = `${basePath}/dates`;
 fetch(path).then(async (res) => {
   const data = await res.json();
   console.log("Caching date data");
   try {
     fs.writeFileSync("src/common/data/ppl/dates.json", JSON.stringify(data));
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+path = `${basePath}/last_update`;
+fetch(path).then(async (res) => {
+  const data = await res.json();
+  console.log("Caching last update data");
+  try {
+    fs.writeFileSync(
+      "src/common/data/ppl/last_update.json",
+      JSON.stringify(data)
+    );
   } catch (err) {
     console.error(err);
   }
