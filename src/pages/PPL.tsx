@@ -49,7 +49,7 @@ const getCombinedStandings = (...args: any[]): StandingsEntry[] => {
       adjustedPoints:
         weeksPlayed.thursday >= 3
           ? points
-              .slice(0, weeksPlayed.thursday - 2)
+              .slice(0, Math.max(...Object.values(weeksPlayed)) - 2)
               .reduce((acc, i) => acc + i, 0)
           : undefined,
       pointsByWeek: merged,
