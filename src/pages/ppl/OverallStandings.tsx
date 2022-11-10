@@ -3,15 +3,15 @@ import { Grid, Icon } from "semantic-ui-react";
 import {
   StandingsEntry,
   StandingsTable,
-} from "../components/ppl/StandingsTable";
+} from "../../components/ppl/StandingsTable";
 import _ from "lodash";
 
-import dates from "../common/data/ppl/dates.json";
-import lastUpdate from "../common/data/ppl/last_update.json";
+import dates from "../../common/data/ppl/dates.json";
+import lastUpdate from "../../common/data/ppl/last_update.json";
 
-import thursday from "../common/data/ppl/standings_27.json";
-import friday from "../common/data/ppl/standings_26.json";
-import sunday from "../common/data/ppl/standings_25.json";
+import thursday from "../../common/data/ppl/standings_27.json";
+import friday from "../../common/data/ppl/standings_26.json";
+import sunday from "../../common/data/ppl/standings_25.json";
 import moment from "moment-timezone";
 
 const getWeeksPlayed = (id: any) => {
@@ -62,7 +62,7 @@ const getCombinedStandings = (...args: any[]): StandingsEntry[] => {
   );
 };
 
-export const PPL = () => {
+export const OverallStandings = () => {
   const standings = getCombinedStandings(thursday, friday, sunday);
   return (
     <>
