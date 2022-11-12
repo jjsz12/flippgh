@@ -6,6 +6,7 @@ export type LocationType =
   | "Coop De Ville"
   | "Shorty's Pins x Pints"
   | "Helicon Brewing (Oakdale)"
+  | "Pins Mechanical Co."
   | "Location TBD";
 
 export type FormatType =
@@ -272,23 +273,23 @@ export const custom_schedule: ScheduleItem[] = [
   },
   {
     date: "2022-11-23",
-    location: "Location TBD",
-    format: "Format TBD",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
   },
   {
     date: "2022-11-30",
-    location: "Location TBD",
-    format: "Format TBD",
+    location: "Pittsburgh Pinball Dojo",
+    format: "Fair Strike Knockout (6 strikes)",
   },
   {
     date: "2022-12-07",
     location: "Helicon Brewing (Oakdale)",
-    format: "Format TBD",
+    format: "Fair Strike Knockout (6 strikes)",
   },
   {
     date: "2022-12-14",
-    location: "Location TBD",
-    format: "Format TBD",
+    location: "Pins Mechanical Co.",
+    format: "3 Strike Knockout",
   },
   {
     date: "2022-12-21",

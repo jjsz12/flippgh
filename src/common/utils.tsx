@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { IfpaTournament, SimpleResults } from "./@types/ifpa_types";
 import { MatchplayTournament, Standings } from "./@types/matchplay_types";
-import { FormatType, ScheduleItem } from "./schedule_data";
+import { FormatType, LocationType, ScheduleItem } from "./schedule_data";
 
 export const findMatchplayLink = (
   scheduleItem: ScheduleItem,
@@ -48,7 +48,7 @@ export const findIfpaPoints = (
   return matchedResult?.points;
 };
 
-export const getDirectionsLink = (location?: string) => {
+export const getDirectionsLink = (location?: LocationType) => {
   if (location === "Kickback Pinball Cafe") {
     return "https://goo.gl/maps/VxGNpVJoadYbCPQn7";
   }
@@ -63,6 +63,9 @@ export const getDirectionsLink = (location?: string) => {
   }
   if (location === "Helicon Brewing (Oakdale)") {
     return "https://goo.gl/maps/kdMdSSTVbUUw99D4A";
+  }
+  if (location === "Pins Mechanical Co.") {
+    return "https://goo.gl/maps/y5FoACAJour6cnWH7";
   }
   return;
 };

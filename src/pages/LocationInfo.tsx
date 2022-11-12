@@ -5,6 +5,7 @@ import { CoopInfo } from "../components/location-info/CoopInfo";
 import { DojoInfo } from "../components/location-info/DojoInfo";
 import { HeliconInfo } from "../components/location-info/HeliconInfo";
 import { KickbackInfo } from "../components/location-info/KickbackInfo";
+import { PinsInfo } from "../components/location-info/PinsInfo";
 import { ShortysInfo } from "../components/location-info/ShortysInfo";
 
 function LocationInfo() {
@@ -33,6 +34,10 @@ function LocationInfo() {
     {
       title: "Kickback Pinball Cafe",
       component: <KickbackInfo />,
+    },
+    {
+      title: "Pins Mechanical Co.",
+      component: <PinsInfo />,
     },
     {
       title: "Pittsburgh Pinball Dojo",
