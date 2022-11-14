@@ -41,10 +41,6 @@ export const DojoInfo = () => {
             $15 venue cover fee in addition to tournament entry fee ($20 total);
             all games are on free play
           </li>
-          <li>
-            <s>Masks required</s> **Masks no longer required as of March 16,
-            2022
-          </li>
           <li>BYOB permitted (no additional fee)</li>
           <li>BYO-Food permitted; snacks available for purchase</li>
           <li>

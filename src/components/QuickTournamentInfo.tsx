@@ -3,9 +3,10 @@ import { useContext } from "react";
 import Countdown, { CountdownRenderProps } from "react-countdown";
 import { Segment } from "semantic-ui-react";
 import { ScheduleItem } from "../common/schedule_data";
-import { getDirectionsLink } from "../common/utils";
+import { getDirectionsLink, getFormatInfo } from "../common/utils";
 import { AppContext, AppContextType } from "./AppContext";
 import DirectionsButton from "./DirectionsButton";
+import { InfoModal } from "./InfoModal";
 import MatchplayButton from "./MatchplayButton";
 import { TextPlaceholder } from "./TextPlaceholder";
 
@@ -96,8 +97,18 @@ function QuickTournamentInfo() {
             <br />
             <b>Start time:</b> 7pm
             <br />
-            <b>Format: </b> {scheduleItem.format}
-            <br />
+            <span
+              style={{
+                display: "flex",
+              }}
+            >
+              <b>Format:</b>&nbsp;{`${scheduleItem.format}`}
+              <InfoModal
+                header={scheduleItem.format}
+                content={getFormatInfo(scheduleItem.format)}
+                iconSize="large"
+              />
+            </span>
             <br />
             {showCountdown ? (
               <Countdown

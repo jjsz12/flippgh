@@ -1,3 +1,4 @@
+import { getFormatInfo } from "../common/utils";
 import ContentContainer from "../components/ContentContainer";
 
 function Rules() {
@@ -13,72 +14,15 @@ function Rules() {
           <ul>
             <li>
               3 Strike Knockout
-              <ul>
-                <li>
-                  Random groups of 2, 3, or 4 players are formed each round
-                </li>
-                <li>
-                  Bottom one or two players from each group receive a strike
-                </li>
-                <li>
-                  Players are eliminated from the tournament after receiving
-                  three strikes
-                </li>
-              </ul>
+              {getFormatInfo('3 Strike Knockout')}
             </li>
             <li>
               Fair Strike Knockout (6 strikes)
-              <ul>
-                <li>
-                  Random groups of 2, 3, or 4 players are formed each round
-                </li>
-                <li>
-                  In four player groups, strikes are awarded as 0/1/1/2 for
-                  1st/2nd/3rd/4th
-                </li>
-                <li>
-                  In three player groups, strikes are awarded as 0/1/2 for
-                  1st/2nd/3rd
-                </li>
-                <li>
-                  In two player groups, strikes are awarded as 0/2 for 1st/2nd
-                </li>
-                <li>
-                  Players are eliminated from the tournament after receiving six
-                  strikes
-                </li>
-              </ul>
+              {getFormatInfo("Fair Strike Knockout (6 strikes)")}
             </li>
             <li>
               Flip Frenzy (2 hours)
-              <ul>
-                <li>
-                  Random groups of 2 players are formed at the start of the
-                  tournament, with one or two players in the queue for future
-                  matches
-                </li>
-                <li>
-                  As games finish, one player from the finishing game will play
-                  again immediately with the first person in the queue, while
-                  the other player will join the back of the queue
-                </li>
-                <li>
-                  Players will play as many games as they can within a two hour
-                  time limit, then top 4 players with the best win/loss ratio
-                  will make playoffs
-                </li>
-                {/* <li>
-                  Playoffs will be amazing race style with 4 or 8 random games
-                  (equal to number of players that make playoffs), half from the
-                  slow bank and the other half from the fast bank
-                </li> */}
-                <li>
-                  Playoffs will be group match play with 3 games at 4/2/1/0
-                  scoring each game for 1st/2nd/3rd/4th determined by cumulative
-                  score. Three games played will be chosen at random and will
-                  attempt to include one each of old/mid/new games.
-                </li>
-              </ul>
+              {getFormatInfo('Flip Frenzy (2 hours)')}
             </li>
           </ul>
         </li>

@@ -288,13 +288,13 @@ export const custom_schedule: ScheduleItem[] = [
   },
   {
     date: "2022-12-14",
-    location: "Pins Mechanical Co.",
-    format: "3 Strike Knockout",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
   },
   {
     date: "2022-12-21",
-    location: "Location TBD",
-    format: "Format TBD",
+    location: "Pins Mechanical Co.",
+    format: "3 Strike Knockout",
   },
   {
     date: "2022-12-28",

@@ -40,6 +40,10 @@ const getCombinedStandings = (...args: any[]): StandingsEntry[] => {
     });
     const points = (Object.values(merged) as number[]).sort((a, b) => b - a);
     const totalPoints = points.reduce((acc, i) => acc + i, 0);
+
+    const minWeeksPlayed = Math.min(...Object.values(weeksPlayed));
+    const maxWeeksPlayed = Math.max(...Object.values(weeksPlayed));
+
     combinedStandings.push({
       player,
       totalPoints,
@@ -47,9 +51,12 @@ const getCombinedStandings = (...args: any[]): StandingsEntry[] => {
       maxWeekScore: points[0],
       secondMaxWeekScore: points.length > 1 ? points[1] : 0,
       adjustedPoints:
-        weeksPlayed.thursday >= 3
+        minWeeksPlayed >= 3
           ? points
-              .slice(0, Math.max(...Object.values(weeksPlayed)) - 2)
+              .slice(
+                0,
+                maxWeeksPlayed < 9 ? maxWeeksPlayed - 2 : maxWeeksPlayed - 3
+              )
               .reduce((acc, i) => acc + i, 0)
           : undefined,
       pointsByWeek: merged,

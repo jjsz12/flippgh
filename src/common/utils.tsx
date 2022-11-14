@@ -130,3 +130,32 @@ export const getFormatInfo = (format: FormatType | undefined): ReactNode => {
       return;
   }
 };
+
+type LocationMap = {
+  [location in LocationType]?: number;
+};
+
+const pinballMapLocationIds: LocationMap = {
+  "Coop De Ville": 15006,
+  "Helicon Brewing (Oakdale)": 9942,
+  "Kickback Pinball Cafe": 3682,
+  "Pins Mechanical Co.": 18664,
+  "Pittsburgh Pinball Dojo": 10790,
+  "Shorty's Pins x Pints": 17078,
+};
+
+const getLocationId = (name: LocationType): number | undefined => {
+  return pinballMapLocationIds[name];
+};
+
+const baseLinkUrl = "https://pinballmap.com/map/?by_location_id=";
+export const getPinMapLink = (name: LocationType): string => {
+  return `${baseLinkUrl}${getLocationId(name)}`;
+}
+
+const getPinMapMachineCount = async (name: LocationType) => {
+  const id = getLocationId(name);
+  const endpoint = `https://pinballmap.com/api/v1/locations/${id}`
+  const response = await fetch(endpoint);
+  return (response as any).body['num_machines'] as number;
+}

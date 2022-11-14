@@ -1,12 +1,14 @@
 import { ReactNode } from "react";
 import { Icon, Modal } from "semantic-ui-react";
+import { IconSizeProp } from "semantic-ui-react/dist/commonjs/elements/Icon/Icon";
 
 interface InfoModalProps {
   header?: ReactNode;
   content?: ReactNode;
+  iconSize?: IconSizeProp;
 }
 
-export const InfoModal = ({ header, content }: InfoModalProps) => {
+export const InfoModal = ({ header, content, iconSize = "large" }: InfoModalProps) => {
   if (content) {
     return (
       <div style={{ paddingLeft: "1rem" }}>
@@ -16,7 +18,7 @@ export const InfoModal = ({ header, content }: InfoModalProps) => {
               name="info circle"
               color="grey"
               style={{ cursor: "pointer" }}
-              size="large"
+              size={iconSize}
             />
           }
           size="tiny"
