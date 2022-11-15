@@ -50,12 +50,6 @@ function Rules() {
           </ul>
         </li>
         <li>
-          For the flip frenzy format, if a variety of machine eras are
-          available, game selection for the first hour will be slow games
-          (majority DMD/LCD games) and then game selection for the second hour
-          will be fast games (majority EM/SS games)
-        </li>
-        <li>
           Plunge extra balls
           <ul>
             <li>

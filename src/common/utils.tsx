@@ -120,9 +120,15 @@ export const getFormatInfo = (format: FormatType | undefined): ReactNode => {
           </li>
           <li>
             Playoffs will be group match play with 3 games at 4/2/1/0 scoring
-            each game for 1st/2nd/3rd/4th determined by cumulative score. Three
-            games played will be chosen at random and will attempt to include
-            one each of old/mid/new games.
+            each game for 1st/2nd/3rd/4th determined by cumulative score. Two
+            banks of three games will be chosen at random and will attempt to
+            include one each of old/mid/new games; the top seed from qualifying
+            will have choice of what bank will be played for playoffs.
+          </li>
+          <li>
+            A tie for top seed will be broken by one ball on a random game. Ties
+            for a playoff spot will be broken by a random full game. All other
+            ties are broken by most wins.
           </li>
         </ul>
       );
@@ -151,11 +157,11 @@ const getLocationId = (name: LocationType): number | undefined => {
 const baseLinkUrl = "https://pinballmap.com/map/?by_location_id=";
 export const getPinMapLink = (name: LocationType): string => {
   return `${baseLinkUrl}${getLocationId(name)}`;
-}
+};
 
 const getPinMapMachineCount = async (name: LocationType) => {
   const id = getLocationId(name);
-  const endpoint = `https://pinballmap.com/api/v1/locations/${id}`
+  const endpoint = `https://pinballmap.com/api/v1/locations/${id}`;
   const response = await fetch(endpoint);
-  return (response as any).body['num_machines'] as number;
-}
+  return (response as any).body["num_machines"] as number;
+};
