@@ -1,4 +1,30 @@
+import { useEffect, useState } from "react";
+import {
+  getPinMapLink,
+  getPinMapMachineCount,
+  getPinMapMachineDetails,
+} from "../../common/utils";
+
 export const KickbackInfo = () => {
+  const [count, setCount] = useState<number>();
+  const [gameList, setGameList] = useState([]);
+
+  useEffect(() => {
+    const fetchCount = async () => {
+      const gameCount = await getPinMapMachineCount("Kickback Pinball Cafe");
+      setCount(gameCount);
+    };
+    fetchCount();
+  }, []);
+
+  useEffect(() => {
+    const fetchGameList = async () => {
+      const machines = await getPinMapMachineDetails("Kickback Pinball Cafe");
+      setGameList(machines);
+    };
+    fetchGameList();
+  }, []);
+
   return (
     <ul>
       <li>
@@ -27,11 +53,16 @@ export const KickbackInfo = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://pinballmap.com/map?utf8=%E2%9C%93&by_location_id=3682&by_location_name=Kickback+Pinball+Cafe"
+          href={getPinMapLink("Kickback Pinball Cafe")}
         >
           Pinball Map
         </a>
-        ]
+        ] {`(${count} games)`}
+        <ul>
+          {gameList.map((game: { name: string }) => {
+            return <li key={game.name}>{game.name}</li>;
+          })}
+        </ul>
       </li>
       <li>
         Notes:

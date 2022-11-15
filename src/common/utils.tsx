@@ -159,9 +159,18 @@ export const getPinMapLink = (name: LocationType): string => {
   return `${baseLinkUrl}${getLocationId(name)}`;
 };
 
-const getPinMapMachineCount = async (name: LocationType) => {
+export const getPinMapMachineCount = async (name: LocationType) => {
   const id = getLocationId(name);
   const endpoint = `https://pinballmap.com/api/v1/locations/${id}`;
   const response = await fetch(endpoint);
-  return (response as any).body["num_machines"] as number;
+  const data = await response.json();
+  return data.num_machines as number;
 };
+
+export const getPinMapMachineDetails = async (name: LocationType) => {
+  const id = getLocationId(name);
+  const endpoint = `https://pinballmap.com/api/v1/locations/${id}/machine_details`;
+  const response = await fetch(endpoint);
+  const data = await response.json();
+  return data.machines;
+}

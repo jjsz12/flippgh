@@ -1,4 +1,30 @@
+import { useEffect, useState } from "react";
+import {
+  getPinMapLink,
+  getPinMapMachineCount,
+  getPinMapMachineDetails,
+} from "../../common/utils";
+
 export const PinsInfo = () => {
+  const [count, setCount] = useState<number>();
+  const [gameList, setGameList] = useState([]);
+
+  useEffect(() => {
+    const fetchCount = async () => {
+      const gameCount = await getPinMapMachineCount("Pins Mechanical Co.");
+      setCount(gameCount);
+    };
+    fetchCount();
+  }, []);
+
+  useEffect(() => {
+    const fetchGameList = async () => {
+      const machines = await getPinMapMachineDetails("Pins Mechanical Co.");
+      setGameList(machines);
+    };
+    fetchGameList();
+  }, []);
+
   return (
     <ul>
       <li>
@@ -27,11 +53,16 @@ export const PinsInfo = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://pinballmap.com/map/?by_location_id=18664"
+          href={getPinMapLink("Pins Mechanical Co.")}
         >
           Pinball Map
         </a>
-        ]
+        ] {`(${count} games)`}
+        <ul>
+          {gameList.map((game: { name: string }) => {
+            return <li key={game.name}>{game.name}</li>;
+          })}
+        </ul>
       </li>
       <li>
         Notes:

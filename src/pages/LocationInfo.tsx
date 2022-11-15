@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { Accordion, AccordionTitleProps, Icon } from "semantic-ui-react";
+import { LocationType } from "../common/schedule_data";
 import ContentContainer from "../components/ContentContainer";
 import { CoopInfo } from "../components/location-info/CoopInfo";
 import { DojoInfo } from "../components/location-info/DojoInfo";
@@ -22,7 +23,7 @@ function LocationInfo() {
     }
   };
 
-  const locations = [
+  const locations: { title: LocationType; component: ReactNode }[] = [
     {
       title: "Coop De Ville",
       component: <CoopInfo />,
@@ -54,7 +55,7 @@ function LocationInfo() {
       <h1>{"Location Information"}</h1>
       <Accordion styled fluid>
         {locations.map((item, index) => (
-          <>
+          <div key={item.title}>
             <Accordion.Title
               active={activeIndex === index}
               index={index}
@@ -66,7 +67,7 @@ function LocationInfo() {
             <Accordion.Content active={activeIndex === index}>
               {item.component}
             </Accordion.Content>
-          </>
+          </div>
         ))}
       </Accordion>
     </ContentContainer>
