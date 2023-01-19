@@ -10,7 +10,7 @@ function Rules() {
         <li>$5 entry fee</li>
         <li>IFPA endorsed</li>
         <li>
-          Tournament format varies each week and can be one of the following:
+          Tournament format varies and can be one of the following:
           <ul>
             <li>
               3 Strike Knockout

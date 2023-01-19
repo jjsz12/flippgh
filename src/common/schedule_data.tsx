@@ -301,4 +301,14 @@ export const custom_schedule: ScheduleItem[] = [
     location: "Kickback Pinball Cafe",
     format: "Fair Strike Knockout (6 strikes)",
   },
+  {
+    date: "2023-01-19",
+    location: "Pittsburgh Pinball Dojo",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
+  {
+    date: "2023-02-08",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
 ];

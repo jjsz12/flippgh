@@ -6,7 +6,7 @@ import { MachineStats } from "../components/MachineStats";
 import { ChampionTable } from "../components/ChampionTable";
 
 function Results() {
-  const [activeIndex, setActiveIndex] = useState(-1);
+  const [activeIndex, setActiveIndex] = useState(1);
 
   const handleClick = (
     _: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -23,7 +23,7 @@ function Results() {
     <ContentContainer>
       <h1>{"Results & Stats"}</h1>
       <Accordion styled fluid>
-        <Accordion.Title
+        {/* <Accordion.Title
           active={activeIndex === 0}
           index={0}
           onClick={handleClick}
@@ -42,7 +42,7 @@ function Results() {
               <TrophyLeaderboard />
             </Grid.Column>
           </Grid>
-        </Accordion.Content>
+        </Accordion.Content> */}
         <Accordion.Title
           active={activeIndex === 1}
           index={1}
