@@ -311,4 +311,54 @@ export const custom_schedule: ScheduleItem[] = [
     location: "Kickback Pinball Cafe",
     format: "Fair Strike Knockout (6 strikes)",
   },
+  {
+    date: "2023-03-08",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
+  {
+    date: "2023-04-12",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
+  {
+    date: "2023-05-10",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
+  {
+    date: "2023-06-14",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
+  {
+    date: "2023-07-12",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
+  {
+    date: "2023-08-09",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
+  {
+    date: "2023-09-13",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
+  {
+    date: "2023-10-11",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
+  {
+    date: "2023-11-08",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
+  {
+    date: "2023-12-13",
+    location: "Kickback Pinball Cafe",
+    format: "Fair Strike Knockout (6 strikes)",
+  },
 ];

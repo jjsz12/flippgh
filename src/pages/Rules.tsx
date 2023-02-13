@@ -20,10 +20,10 @@ function Rules() {
               Fair Strike Knockout (6 strikes)
               {getFormatInfo("Fair Strike Knockout (6 strikes)")}
             </li>
-            <li>
+            {/* <li>
               Flip Frenzy (2 hours)
               {getFormatInfo('Flip Frenzy (2 hours)')}
-            </li>
+            </li> */}
           </ul>
         </li>
         <li>
@@ -42,8 +42,7 @@ function Rules() {
           games) and slow games (majority DMD/LCD games)
           <ul>
             <li>
-              Note: Machines included in the tournament and the strict
-              alternation between each machine group may be subject to
+              Note: Machines included in the tournament may be subject to
               modification at the discretion of the tournament director due to
               time limitations
             </li>

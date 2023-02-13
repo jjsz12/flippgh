@@ -5,7 +5,7 @@ import { TrophyLeaderboard } from "../components/TrophyLeaderboard";
 import { MachineStats } from "../components/MachineStats";
 import { ChampionTable } from "../components/ChampionTable";
 
-function Results() {
+function Stats() {
   const [activeIndex, setActiveIndex] = useState(1);
 
   const handleClick = (
@@ -21,7 +21,7 @@ function Results() {
 
   return (
     <ContentContainer>
-      <h1>{"Results & Stats"}</h1>
+      <h1>{"Machine Stats"}</h1>
       <Accordion styled fluid>
         {/* <Accordion.Title
           active={activeIndex === 0}
@@ -59,4 +59,4 @@ function Results() {
   );
 }
 
-export default Results;
+export default Stats;

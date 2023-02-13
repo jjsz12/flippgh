@@ -25,3 +25,8 @@ code {
 .menu-dropdown .text {
   margin: .5rem;
 }
+
+.calendar-day-cell:hover {
+  background-color: #BBBBBB;
+  cursor: pointer;
+}

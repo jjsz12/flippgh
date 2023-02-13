@@ -8,12 +8,12 @@ function ContentContainer({ children }: PropsWithChildren<{}>) {
   if (size.width && size.width > 640) {
     style = {
       marginLeft: "210px",
-      padding: "2rem",
+      padding: "1.5rem",
     };
   } else {
     style = {
       marginTop: "76px",
-      padding: "2rem",
+      padding: "1.5rem",
     };
   }
 

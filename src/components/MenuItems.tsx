@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Image, Menu } from "semantic-ui-react";
-import logo from "../assets/flip-pgh-logo-white.svg";
+import logo from "../assets/flip-pgh-com-logo-white.svg";
 import { useWindowSize } from "../hooks/useWindowSize";
 
 function MenuItems() {
@@ -13,7 +13,7 @@ function MenuItems() {
     if (size.width && size.width > 640) {
       return <Image src={logo} />;
     }
-    return <Image src={logo} style={{ height: 50, width: 50 }} />;
+    return <Image src={logo} style={{ height: 60, width: 100 }} />;
   };
 
   return (
@@ -63,14 +63,23 @@ function MenuItems() {
         Format & Rules
       </Menu.Item>
       <Menu.Item
-        name="results"
-        active={location.pathname === "/results"}
+        name="stats"
+        active={location.pathname === "/stats"}
         onClick={() => {
-          navigate("/results");
+          navigate("/stats");
         }}
       >
-        Results & Stats
+        Machine Stats
       </Menu.Item>
+      {/* <Menu.Item
+        name="calendar"
+        active={location.pathname === "/calendar"}
+        onClick={() => {
+          navigate("/calendar");
+        }}
+      >
+        Calendar
+      </Menu.Item> */}
     </>
   );
 }

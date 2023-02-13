@@ -1,15 +1,15 @@
 import { ReactNode } from "react";
 import { IfpaTournament, SimpleResults } from "./@types/ifpa_types";
-import { MatchplayTournament, Standings } from "./@types/matchplay_types";
+import { Tournament } from "./@types/matchplay_next_types";
+import { Standings } from "./@types/matchplay_types";
 import { FormatType, LocationType, ScheduleItem } from "./schedule_data";
 
-export const findMatchplayLink = (
-  scheduleItem: ScheduleItem,
-  tournament?: MatchplayTournament
+export const getMatchplayLink = (
+  tournament?: Tournament
 ) => {
-  const urlLabel = tournament?.url_label;
-  if (urlLabel) {
-    return "https://matchplay.events/live/" + urlLabel;
+  const id = tournament?.tournamentId;
+  if (id) {
+    return "https://next.matchplay.events/tournaments/" + id;
   }
 };
 

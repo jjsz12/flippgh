@@ -17,7 +17,7 @@ function Home() {
           <Link to="/rules">{"Go to Format & Rules"}</Link>
         </li>
         <li>
-          <Link to="/results">{"Go to Results & Stats"}</Link>
+          <Link to="/stats">{"Go to Machine Stats"}</Link>
         </li>
       </ul>
       <br />

@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Dropdown, Image, Menu } from "semantic-ui-react";
-import logo from "../assets/flip-pgh-logo-white.svg";
+import logo from "../assets/flip-pgh-com-logo-white.svg";
 import { useWindowSize } from "../hooks/useWindowSize";
 
 function MobileMenu() {
@@ -11,7 +12,7 @@ function MobileMenu() {
     if (size.width && size.width > 640) {
       return <Image src={logo} />;
     }
-    return <Image src={logo} style={{ height: 50, width: 50 }} />;
+    return <Image src={logo} style={{ height: 60, width: 100 }} />;
   };
 
   return (
@@ -28,7 +29,6 @@ function MobileMenu() {
         item
         text="Menu"
         icon="bars"
-        simple
         style={{ marginLeft: "auto" }}
         className="menu-dropdown"
       >
@@ -63,11 +63,18 @@ function MobileMenu() {
           </Dropdown.Item>
           <Dropdown.Item
             onClick={() => {
-              navigate("/results");
+              navigate("/stats");
             }}
           >
-            Results & Stats
+            Machine Stats
           </Dropdown.Item>
+          {/* <Dropdown.Item
+            onClick={() => {
+              navigate("/calendar");
+            }}
+          >
+            Calendar
+          </Dropdown.Item> */}
         </Dropdown.Menu>
       </Dropdown>
     </Menu>

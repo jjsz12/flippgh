@@ -1,11 +1,13 @@
 import moment from "moment";
 import { useCallback, useContext, useEffect, useReducer } from "react";
 import { Table } from "semantic-ui-react";
-import json from "../common/matchplay_games.json";
 import { AppContext, AppContextType } from "./AppContext";
 import _ from "lodash";
 import { FilterItem, TableFilter } from "./TableFilter";
 import { TableDataExport } from "./TableDataExport";
+import _2022_games from "../common/matchplay_games_1871.json";
+import _2023_games from "../common/matchplay_games_2546.json";
+import { TournamentGames } from "../common/@types/matchplay_next_types";
 
 interface MachineStatEntry {
   name: string;
@@ -72,6 +74,8 @@ const reducer = (state: any, action: any) => {
   }
 };
 
+const games = (_2022_games as TournamentGames[]).concat(_2023_games);
+
 function MachineStats() {
   const [state, dispatch] = useReducer(reducer, {
     machines: [],
@@ -104,7 +108,7 @@ function MachineStats() {
 
   useEffect(() => {
     let machineStats: MachineStatEntry[] = [];
-    json.forEach((entry) => {
+    games.forEach((entry) => {
       if (entry && entry.arena) {
         const existingEntry = machineStats.find((existingEntry) => {
           return (
@@ -114,7 +118,7 @@ function MachineStats() {
         });
         if (existingEntry) {
           existingEntry.playCount += 1;
-          existingEntry.playerCount += entry.players.length;
+          existingEntry.playerCount += entry.playerIds.length;
           existingEntry.totalPlaytimeSeconds += entry.duration;
           existingEntry.avgSeconds =
             existingEntry.totalPlaytimeSeconds / existingEntry.playerCount;
@@ -123,9 +127,9 @@ function MachineStats() {
             name: entry.arena.name,
             location: locationMap[entry.tournamentId],
             playCount: 1,
-            playerCount: entry.players.length,
+            playerCount: entry.playerIds.length,
             totalPlaytimeSeconds: entry.duration,
-            avgSeconds: entry.duration / entry.players.length,
+            avgSeconds: entry.duration / entry.playerIds.length,
           };
           machineStats.push(newEntry);
         }
