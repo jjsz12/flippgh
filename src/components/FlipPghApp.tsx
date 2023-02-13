@@ -1,7 +1,5 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { useWindowSize } from "../hooks/useWindowSize";
-import { CalendarView } from "../pages/CalendarView";
 import Home from "../pages/Home";
 import LocationInfo from "../pages/LocationInfo";
 import Stats from "../pages/Stats";

@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { Accordion, AccordionTitleProps, Grid, Icon } from "semantic-ui-react";
+import { Accordion, AccordionTitleProps, Icon } from "semantic-ui-react";
 import ContentContainer from "../components/ContentContainer";
-import { TrophyLeaderboard } from "../components/TrophyLeaderboard";
 import { MachineStats } from "../components/MachineStats";
-import { ChampionTable } from "../components/ChampionTable";
 
 function Stats() {
   const [activeIndex, setActiveIndex] = useState(1);

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Dropdown, Image, Menu } from "semantic-ui-react";
 import logo from "../assets/flip-pgh-com-logo-white.svg";

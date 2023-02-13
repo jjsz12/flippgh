@@ -50,7 +50,7 @@ interface AppProviderProps {
 }
 
 export function AppProvider({ children }: AppProviderProps) {
-  const getContextValue = useCallback(() => ({ schedule }), [schedule]);
+  const getContextValue = useCallback(() => ({ schedule }), []);
 
   return (
     <AppContext.Provider value={getContextValue()}>

@@ -1,4 +1,3 @@
-import _ from "lodash";
 import moment, { Moment } from "moment";
 import { ReactNode, useRef, useState } from "react";
 import { Button, Label, Modal, Table } from "semantic-ui-react";
