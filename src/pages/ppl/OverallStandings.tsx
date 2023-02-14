@@ -10,6 +10,9 @@ import moment from "moment-timezone";
 import dates from "../../common/data/ppl/dates.json";
 import updates from "../../common/data/ppl/updates.json";
 
+import _39_thursday from "../../common/data/ppl/standings_22.json";
+import _39_friday from "../../common/data/ppl/standings_23.json";
+import _39_sunday from "../../common/data/ppl/standings_24.json";
 import _40_thursday from "../../common/data/ppl/standings_27.json";
 import _40_friday from "../../common/data/ppl/standings_26.json";
 import _40_sunday from "../../common/data/ppl/standings_25.json";
@@ -116,6 +119,11 @@ const renderMetadata = (weeksPlayed: WeeksPlayedData, update: any) => {
 
 export const OverallStandings = () => {
   const data: any = useMemo(() => {
+    const _39_weeksPlayed = {
+      thursday: getWeeksPlayed(_39_thursday[0]._id.season_id),
+      friday: getWeeksPlayed(_39_friday[0]._id.season_id),
+      sunday: getWeeksPlayed(_39_sunday[0]._id.season_id),
+    };
     const _40_weeksPlayed = {
       thursday: getWeeksPlayed(_40_thursday[0]._id.season_id),
       friday: getWeeksPlayed(_40_friday[0]._id.season_id),
@@ -127,6 +135,16 @@ export const OverallStandings = () => {
       sunday: getWeeksPlayed(_41_sunday[0]._id.season_id),
     };
     return {
+      "39": {
+        standings: getCombinedStandings(
+          _39_weeksPlayed,
+          _39_thursday,
+          _39_friday,
+          _39_sunday
+        ),
+        weeksPlayed: _39_weeksPlayed,
+        seasonIds: ["22", "23", "24"],
+      },
       "40": {
         standings: getCombinedStandings(
           _40_weeksPlayed,
@@ -161,13 +179,20 @@ export const OverallStandings = () => {
       text: "Season 40 (Fall 2022)",
       value: "40",
     },
+    {
+      key: "39",
+      text: "Season 39 (Spring 2022)",
+      value: "39",
+    },
   ];
 
   const [season, setSeason] = useState("41");
 
   const update = useMemo(() => {
     return updates.find((update) => {
-      return _.isEqual(update.included_season_ids, data[season].seasonIds);
+      return data[season].seasonIds.every((i: string) => {
+        return update.included_season_ids.includes(i);
+      });
     });
   }, [season, data]);
 
