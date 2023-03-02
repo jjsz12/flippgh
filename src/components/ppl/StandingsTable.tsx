@@ -1,6 +1,6 @@
 import { Table } from "semantic-ui-react";
 
-interface PointsByWeek {
+export interface PointsByWeek {
   week_1?: number;
   week_2?: number;
   week_3?: number;
@@ -12,6 +12,18 @@ interface PointsByWeek {
   week_9?: number;
 }
 
+export interface DaysPlayed {
+  week_1?: string;
+  week_2?: string;
+  week_3?: string;
+  week_4?: string;
+  week_5?: string;
+  week_6?: string;
+  week_7?: string;
+  week_8?: string;
+  week_9?: string;
+}
+
 export interface StandingsEntry {
   player: string;
   totalPoints: number;
@@ -20,6 +32,7 @@ export interface StandingsEntry {
   secondMaxWeekScore: number;
   adjustedPoints?: number;
   pointsByWeek?: PointsByWeek;
+  daysPlayed?: DaysPlayed;
 }
 
 interface StandingsTableProps {
@@ -40,9 +53,15 @@ export const StandingsTable = ({ data, division }: StandingsTableProps) => {
       <Table celled unstackable>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Player</Table.HeaderCell>
-            <Table.HeaderCell>Total Points</Table.HeaderCell>
-            <Table.HeaderCell>Adjusted Points</Table.HeaderCell>
+            <Table.HeaderCell style={{ backgroundColor: "#f2f2f2" }}>
+              Player
+            </Table.HeaderCell>
+            <Table.HeaderCell style={{ backgroundColor: "#f2f2f2" }}>
+              Total Points
+            </Table.HeaderCell>
+            <Table.HeaderCell style={{ backgroundColor: "#f2f2f2" }}>
+              Adjusted Points
+            </Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
@@ -51,7 +70,9 @@ export const StandingsTable = ({ data, division }: StandingsTableProps) => {
               <Table.Row key={o.player}>
                 <Table.Cell>{o.player}</Table.Cell>
                 <Table.Cell>{o.totalPoints}</Table.Cell>
-                <Table.Cell>{o.adjustedPoints ? o.adjustedPoints : '-'}</Table.Cell>
+                <Table.Cell>
+                  {o.adjustedPoints ? o.adjustedPoints : "-"}
+                </Table.Cell>
               </Table.Row>
             );
           })}

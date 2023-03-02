@@ -81,7 +81,9 @@ function Schedule() {
               }
               return (
                 <Table.Row>
-                  <Table.Cell>{dateString}</Table.Cell>
+                  <Table.Cell style={{ paddingLeft: "1rem" }}>
+                    {dateString}
+                  </Table.Cell>
                   <Table.Cell>{o.location}</Table.Cell>
                   {includeTime ? <Table.Cell>7pm</Table.Cell> : null}
                   <Table.Cell>
