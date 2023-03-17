@@ -1,15 +1,15 @@
 import moment from "moment";
 import { useContext, useState } from "react";
 import { Accordion, Icon, Table } from "semantic-ui-react";
-import { ScheduleItem } from "../common/schedule_data";
-import { getDirectionsLink, getFormatInfo } from "../common/utils";
-import { AppContext, AppContextType } from "../components/AppContext";
-import ContentContainer from "../components/ContentContainer";
-import DirectionsButton from "../components/DirectionsButton";
-import { InfoModal } from "../components/InfoModal";
-import MatchplayButton from "../components/MatchplayButton";
-import { TextPlaceholder } from "../components/TextPlaceholder";
-import { useWindowSize } from "../hooks/useWindowSize";
+import { ScheduleItem } from "../../common/schedule_data";
+import { getDirectionsLink, getFormatInfo } from "../../common/utils";
+import { AppContext, AppContextType } from "../../components/AppContext";
+import ContentContainer from "../../components/ContentContainer";
+import DirectionsButton from "../../components/DirectionsButton";
+import { InfoModal } from "../../components/InfoModal";
+import MatchplayButton from "../../components/MatchplayButton";
+import { TextPlaceholder } from "../../components/TextPlaceholder";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 function Schedule() {
   const { schedule }: AppContextType = useContext(AppContext);

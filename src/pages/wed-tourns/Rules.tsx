@@ -1,5 +1,5 @@
-import { getFormatInfo } from "../common/utils";
-import ContentContainer from "../components/ContentContainer";
+import { getFormatInfo } from "../../common/utils";
+import ContentContainer from "../../components/ContentContainer";
 
 function Rules() {
   return (

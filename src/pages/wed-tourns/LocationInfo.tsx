@@ -1,13 +1,13 @@
 import React, { ReactNode, useState } from "react";
 import { Accordion, AccordionTitleProps, Icon } from "semantic-ui-react";
-import { LocationType } from "../common/schedule_data";
-import ContentContainer from "../components/ContentContainer";
-import { CoopInfo } from "../components/location-info/CoopInfo";
-import { DojoInfo } from "../components/location-info/DojoInfo";
-import { HeliconInfo } from "../components/location-info/HeliconInfo";
-import { KickbackInfo } from "../components/location-info/KickbackInfo";
-import { PinsInfo } from "../components/location-info/PinsInfo";
-import { ShortysInfo } from "../components/location-info/ShortysInfo";
+import { LocationType } from "../../common/schedule_data";
+import ContentContainer from "../../components/ContentContainer";
+import { CoopInfo } from "../../components/location-info/CoopInfo";
+import { DojoInfo } from "../../components/location-info/DojoInfo";
+import { HeliconInfo } from "../../components/location-info/HeliconInfo";
+import { KickbackInfo } from "../../components/location-info/KickbackInfo";
+import { PinsInfo } from "../../components/location-info/PinsInfo";
+import { ShortysInfo } from "../../components/location-info/ShortysInfo";
 
 function LocationInfo() {
   const [activeIndex, setActiveIndex] = useState(-1);

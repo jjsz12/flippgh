@@ -55,7 +55,10 @@ function QuickTournamentInfo() {
     return (
       <div style={{ paddingBottom: "1rem" }}>
         <Segment compact>
-          <h3>Next Tournament</h3>
+          <h3 style={{ marginBottom: "unset" }}>Next Tournament</h3>
+          <div style={{ fontStyle: "italic", marginBottom: "1rem" }}>
+            Wednesday Night Strikes
+          </div>
           <TextPlaceholder width="285px" />
         </Segment>
       </div>
@@ -90,7 +93,10 @@ function QuickTournamentInfo() {
       return (
         <div style={{ paddingBottom: "1rem" }}>
           <Segment compact>
-            <h3>{textHeader}</h3>
+            <h3 style={{ marginBottom: "unset" }}>{textHeader}</h3>
+            <div style={{ fontStyle: "italic", marginBottom: "1rem" }}>
+              Wednesday Night Strikes
+            </div>
             <b>Date: </b> {moment(scheduleItem.date).format("dddd, M/D/YYYY")}
             <br />
             <b>Location: </b> {scheduleItem.location}

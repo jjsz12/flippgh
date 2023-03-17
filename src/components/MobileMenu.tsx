@@ -39,6 +39,31 @@ function MobileMenu() {
           >
             Home
           </Dropdown.Item>
+          <Dropdown.Divider />
+          <Dropdown.Header>Flipside Pinball League</Dropdown.Header>
+          <Dropdown.Item
+            onClick={() => {
+              navigate("/flipside/overview");
+            }}
+          >
+            Overview
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={() => {
+              navigate("/flipside/schedule");
+            }}
+          >
+            Schedule
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={() => {
+              navigate("/flipside/more-details");
+            }}
+          >
+            More Details
+          </Dropdown.Item>
+          <Dropdown.Divider />
+          <Dropdown.Header>Wednesday Night Strikes</Dropdown.Header>
           <Dropdown.Item
             onClick={() => {
               navigate("/schedule");
