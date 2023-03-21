@@ -5,7 +5,6 @@ import ContentContainer from "../components/ContentContainer";
 function Home() {
   return (
     <ContentContainer>
-      <QuickTournamentInfo />
       <h3>Superflip Pinball League</h3>
       <i>New season starts Monday, April 3rd at 7:00pm!</i>
       <ul>
@@ -19,6 +18,8 @@ function Home() {
           <Link to="/spl/more-details">{"Go to More Details"}</Link>
         </li>
       </ul>
+      <div style={{ marginBottom: "4rem" }} />
+      <QuickTournamentInfo />
       <h3>Wednesday Night Strikes</h3>
       <ul>
         <li>

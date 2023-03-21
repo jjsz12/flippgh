@@ -59,8 +59,8 @@ export const MoreDetails = () => {
             <ul>
               <li>
                 Opponent selection is based on the cumulative league standings
-                not counting the current week (E.g., groupings will be 1/2/3/4,
-                5/6/7/8, etc.)
+                based on average score from weeks played not counting the
+                current week (E.g., groupings will be 1/2/3/4, 5/6/7/8, etc.)
               </li>
               <li>
                 Game & order choice & selection is as follows: 2,1,3,4 for game
@@ -135,7 +135,7 @@ export const MoreDetails = () => {
           </li>
           <li>
             Ensure that you have started the appropriate # of players. Any game
-            not started with the correct # wll be void and restarted.
+            not started with the correct # will be void and restarted.
           </li>
         </ul>
       </p>
