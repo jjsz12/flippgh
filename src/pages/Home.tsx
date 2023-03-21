@@ -6,19 +6,20 @@ function Home() {
   return (
     <ContentContainer>
       <QuickTournamentInfo />
-      <h5>Flipside Pinball League</h5>
+      <h3>Superflip Pinball League</h3>
+      <i>New season starts Monday, April 3rd at 7:00pm!</i>
       <ul>
         <li>
-          <Link to="/flipside/overview">{"Go to Overview"}</Link>
+          <Link to="/spl/overview">{"Go to Overview"}</Link>
         </li>
         <li>
-          <Link to="/flipside/schedule">{"Go to Schedule"}</Link>
+          <Link to="/spl/schedule">{"Go to Current Schedule"}</Link>
         </li>
         <li>
-          <Link to="/flipside/more-details">{"Go to More Details"}</Link>
+          <Link to="/spl/more-details">{"Go to More Details"}</Link>
         </li>
       </ul>
-      <h5>Wednesday Night Strikes</h5>
+      <h3>Wednesday Night Strikes</h3>
       <ul>
         <li>
           <Link to="/schedule">{"Go to Schedule"}</Link>
@@ -33,7 +34,7 @@ function Home() {
           <Link to="/stats">{"Go to Machine Stats"}</Link>
         </li>
       </ul>
-      <h5>Pittsburgh Pinball League</h5>
+      <h3>Pittsburgh Pinball League</h3>
       <ul>
         <li>
           <Link to="/ppl">{"Go to Combined PPL Results"}</Link>

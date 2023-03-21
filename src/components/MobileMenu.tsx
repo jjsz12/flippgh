@@ -40,24 +40,24 @@ function MobileMenu() {
             Home
           </Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Header>Flipside Pinball League</Dropdown.Header>
+          <Dropdown.Header>Superflip Pinball League</Dropdown.Header>
           <Dropdown.Item
             onClick={() => {
-              navigate("/flipside/overview");
+              navigate("/spl/overview");
             }}
           >
             Overview
           </Dropdown.Item>
           <Dropdown.Item
             onClick={() => {
-              navigate("/flipside/schedule");
+              navigate("/spl/schedule");
             }}
           >
-            Schedule
+            Current Schedule
           </Dropdown.Item>
           <Dropdown.Item
             onClick={() => {
-              navigate("/flipside/more-details");
+              navigate("/spl/more-details");
             }}
           >
             More Details

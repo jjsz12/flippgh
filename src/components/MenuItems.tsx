@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Image, Menu } from "semantic-ui-react";
 import logo from "../assets/flip-pgh-com-logo-white.svg";
@@ -36,31 +35,31 @@ function MenuItems() {
         Home
       </Menu.Item>
       <Menu.Item>
-        <Menu.Header>Flipside Pinball League</Menu.Header>
+        <Menu.Header>Superflip Pinball League</Menu.Header>
         <Menu.Menu>
           <Menu.Item
-            name="flipside-overview"
-            active={location.pathname === "/flipside/overview"}
+            name="spl-overview"
+            active={location.pathname === "/spl/overview"}
             onClick={() => {
-              navigate("/flipside/overview");
+              navigate("/spl/overview");
             }}
           >
             Overview
           </Menu.Item>
           <Menu.Item
-            name="flipside-schedule"
-            active={location.pathname === "/flipside/schedule"}
+            name="spl-schedule"
+            active={location.pathname === "/spl/schedule"}
             onClick={() => {
-              navigate("/flipside/schedule");
+              navigate("/spl/schedule");
             }}
           >
-            Schedule
+            Current Schedule
           </Menu.Item>
           <Menu.Item
-            name="flipside-details"
-            active={location.pathname === "/flipside/more-details"}
+            name="spl-details"
+            active={location.pathname === "/spl/more-details"}
             onClick={() => {
-              navigate("/flipside/more-details");
+              navigate("/spl/more-details");
             }}
           >
             More Details
