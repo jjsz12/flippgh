@@ -6,7 +6,7 @@ export const Overview = () => {
     <ContentContainer>
       <h1>Superflip Pinball League (SPL)</h1>
       <p>
-        <i>Industry Night @ Pins Mechanical Co. Pittsburgh</i>
+        <i>Industry Night (Mondays) @ Pins Mechanical Co. Pittsburgh</i>
       </p>
       <p>
         The SPL aims to create an inclusive and fun pinball environment that:

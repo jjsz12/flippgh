@@ -5,8 +5,10 @@ import ContentContainer from "../components/ContentContainer";
 function Home() {
   return (
     <ContentContainer>
-      <h3>Superflip Pinball League</h3>
-      <i>New season starts Monday, April 3rd at 7:00pm!</i>
+      <h3>Superflip Pinball League (SPL)</h3>
+      <i>Industry Night (Mondays) @ Pins Mechanical Co. Pittsburgh</i>
+      <br />
+      <i>Inaugural season starts Monday, April 3rd at 7:00pm!</i>
       <ul>
         <li>
           <Link to="/spl/overview">{"Go to Overview"}</Link>

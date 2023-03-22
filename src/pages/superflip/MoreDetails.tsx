@@ -3,7 +3,7 @@ import ContentContainer from "../../components/ContentContainer";
 export const MoreDetails = () => {
   return (
     <ContentContainer>
-      <h1>Superflip Pinball League</h1>
+      <h1>Superflip Pinball League (SPL)</h1>
       <p>
         <ul>
           <li>Your League Tournament Directors (TDs):</li>

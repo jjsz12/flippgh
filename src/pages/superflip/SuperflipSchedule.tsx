@@ -3,7 +3,7 @@ import ContentContainer from "../../components/ContentContainer";
 export const SuperflipSchedule = () => {
   return (
     <ContentContainer>
-      <h1>Superflip Pinball League</h1>
+      <h1>Superflip Pinball League (SPL)</h1>
       <h3>Spring 2023 Season Schedule</h3>
       <p>
         <i>
