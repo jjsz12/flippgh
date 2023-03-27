@@ -47,6 +47,15 @@ function MenuItems() {
             Overview
           </Menu.Item>
           <Menu.Item
+            name="spl-details"
+            active={location.pathname === "/spl/more-details"}
+            onClick={() => {
+              navigate("/spl/more-details");
+            }}
+          >
+            More Details
+          </Menu.Item>
+          <Menu.Item
             name="spl-schedule"
             active={location.pathname === "/spl/schedule"}
             onClick={() => {
@@ -56,13 +65,22 @@ function MenuItems() {
             Current Schedule
           </Menu.Item>
           <Menu.Item
-            name="spl-details"
-            active={location.pathname === "/spl/more-details"}
+            name="spl-standings"
+            active={location.pathname === "/spl/standings"}
             onClick={() => {
-              navigate("/spl/more-details");
+              navigate("/spl/standings");
             }}
           >
-            More Details
+            Standings
+          </Menu.Item>
+          <Menu.Item
+            name="spl-matchplay-links"
+            active={location.pathname === "/spl/matchplay-links"}
+            onClick={() => {
+              navigate("/spl/matchplay-links");
+            }}
+          >
+            Matchplay Links
           </Menu.Item>
         </Menu.Menu>
       </Menu.Item>

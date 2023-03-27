@@ -6,7 +6,7 @@ function Home() {
   return (
     <ContentContainer>
       <h3>Superflip Pinball League (SPL)</h3>
-      <i>Industry Night (Mondays) @ Pins Mechanical Co. Pittsburgh</i>
+      <i>Service Industry Night (Mondays) @ Pins Mechanical Co. Pittsburgh</i>
       <br />
       <i>Inaugural season starts Monday, April 3rd at 7:00pm!</i>
       <ul>
@@ -18,6 +18,12 @@ function Home() {
         </li>
         <li>
           <Link to="/spl/more-details">{"Go to More Details"}</Link>
+        </li>
+        <li>
+          <Link to="/spl/standings">{"Go to Standings"}</Link>
+        </li>
+        <li>
+          <Link to="/spl/matchplay-links">{"Go to Matchplay Links"}</Link>
         </li>
       </ul>
       <div style={{ marginBottom: "4rem" }} />

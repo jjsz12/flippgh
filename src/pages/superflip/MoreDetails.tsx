@@ -1,9 +1,10 @@
 import ContentContainer from "../../components/ContentContainer";
+import { SPLPageHeader } from "./components/SPLPageHeader";
 
 export const MoreDetails = () => {
   return (
     <ContentContainer>
-      <h1>Superflip Pinball League (SPL)</h1>
+      <SPLPageHeader />
       <p>
         <ul>
           <li>Your League Tournament Directors (TDs):</li>

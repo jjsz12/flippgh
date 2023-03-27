@@ -11,6 +11,8 @@ import SideMenu from "./components/SideMenu";
 import { SuperflipSchedule } from "./pages/superflip/SuperflipSchedule";
 import { Overview } from "./pages/superflip/Overview";
 import { MoreDetails } from "./pages/superflip/MoreDetails";
+import { SuperlipStandings } from "./pages/superflip/SuperflipStandings";
+import { SuperflipMatchplayLinksView } from "./pages/superflip/SuperflipMatchplayLinksView";
 
 function FlipPghApp() {
   const size = useWindowSize();
@@ -28,8 +30,10 @@ function FlipPghApp() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/spl/overview" element={<Overview />} />
-        <Route path="/spl/schedule" element={<SuperflipSchedule />} />
         <Route path="/spl/more-details" element={<MoreDetails />} />
+        <Route path="/spl/schedule" element={<SuperflipSchedule />} />
+        <Route path="/spl/standings" element={<SuperlipStandings />} />
+        <Route path="/spl/matchplay-links" element={<SuperflipMatchplayLinksView />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/locations" element={<LocationInfo />} />
         <Route path="/rules" element={<Rules />} />

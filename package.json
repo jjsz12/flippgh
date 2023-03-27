@@ -36,6 +36,7 @@
     "cache-ifpa": "node cacheIfpa.js",
     "cache-matchplay": "node cacheNextMatchplay.js",
     "cache-ppl": "node cachePPLStandings.js",
+    "cache-spl": "node cacheSPLSeriesData.js",
     "cache": "yarn run cache-ifpa && yarn run cache-matchplay"
   },
   "eslintConfig": {

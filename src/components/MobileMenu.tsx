@@ -50,6 +50,13 @@ function MobileMenu() {
           </Dropdown.Item>
           <Dropdown.Item
             onClick={() => {
+              navigate("/spl/more-details");
+            }}
+          >
+            More Details
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={() => {
               navigate("/spl/schedule");
             }}
           >
@@ -57,10 +64,17 @@ function MobileMenu() {
           </Dropdown.Item>
           <Dropdown.Item
             onClick={() => {
-              navigate("/spl/more-details");
+              navigate("/spl/standings");
             }}
           >
-            More Details
+            Standings
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={() => {
+              navigate("/spl/matchplay-links");
+            }}
+          >
+            Matchplay Links
           </Dropdown.Item>
           <Dropdown.Divider />
           <Dropdown.Header>Wednesday Night Strikes</Dropdown.Header>
