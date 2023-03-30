@@ -33,9 +33,9 @@ function Home() {
         <li>
           <Link to="/schedule">{"Go to Schedule"}</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/locations">{"Go to Location Info"}</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/rules">{"Go to Format & Rules"}</Link>
         </li>

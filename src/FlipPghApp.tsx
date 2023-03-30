@@ -35,7 +35,7 @@ function FlipPghApp() {
         <Route path="/spl/standings" element={<SuperlipStandings />} />
         <Route path="/spl/matchplay-links" element={<SuperflipMatchplayLinksView />} />
         <Route path="/schedule" element={<Schedule />} />
-        <Route path="/locations" element={<LocationInfo />} />
+        {/* <Route path="/locations" element={<LocationInfo />} /> */}
         <Route path="/rules" element={<Rules />} />
         <Route path="/stats" element={<Stats />} />
         {/* <Route path="/calendar" element={<CalendarView />} /> */}

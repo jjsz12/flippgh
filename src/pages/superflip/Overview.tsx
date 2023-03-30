@@ -42,8 +42,8 @@ export const Overview = () => {
           <ul>
             <li>First round: 2 games with random group pairing</li>
             <li>
-              Second round: 2 games with tiered group pairing (based on current
-              standings from previous weeks)
+              Second round: 2 games with tiered group pairing (based on average
+              score from previous weeks)
             </li>
           </ul>
           {/* <li>Gift card raffles every week of the season!</li> */}
@@ -52,6 +52,11 @@ export const Overview = () => {
           See the <Link to="/spl/more-details">{"More Details"}</Link> page for
           full details of the format and rules.
         </span>
+      </p>
+      <h3>How do I sign up?</h3>
+      <p>
+        Just show up to any league night! We'll help get you signed in and ready
+        to play in groups that evening.
       </p>
       <SPLScheduleText />
     </ContentContainer>

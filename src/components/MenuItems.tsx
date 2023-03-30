@@ -96,7 +96,7 @@ function MenuItems() {
           >
             Schedule
           </Menu.Item>
-          <Menu.Item
+          {/* <Menu.Item
             name="locations"
             active={location.pathname === "/locations"}
             onClick={() => {
@@ -104,7 +104,7 @@ function MenuItems() {
             }}
           >
             Location Info
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item
             name="rules"
             active={location.pathname === "/rules"}

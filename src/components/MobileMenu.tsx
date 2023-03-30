@@ -85,13 +85,13 @@ function MobileMenu() {
           >
             Schedule
           </Dropdown.Item>
-          <Dropdown.Item
+          {/* <Dropdown.Item
             onClick={() => {
               navigate("/locations");
             }}
           >
             Location Info
-          </Dropdown.Item>
+          </Dropdown.Item> */}
           <Dropdown.Item
             onClick={() => {
               navigate("/rules");
