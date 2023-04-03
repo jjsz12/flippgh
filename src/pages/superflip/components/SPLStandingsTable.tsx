@@ -2,7 +2,7 @@ import _ from "lodash";
 import { useEffect, useReducer } from "react";
 import { Table } from "semantic-ui-react";
 
-import data from "../../../common/data/spl/spl_series_data_2634.json";
+import data from "../../../common/data/spl/spl_series_data_2626.json";
 import { getTournamentIdTuples } from "../utils";
 
 interface SPLStandingsRow {
@@ -86,6 +86,22 @@ interface IState {
 const average = (array: number[]) =>
   array.reduce((a, b) => a + b) / array.length;
 
+interface MatchplayStandingsItem {
+  playerId: number;
+  position: number;
+  points: number;
+  pointsAdjusted: never[];
+}
+
+interface MatchplayPlayerItem {
+  playerId: number;
+  name: string;
+  ifpaId: null;
+  status: string;
+  organizerId: number;
+  claimedBy: null;
+}
+
 const createData = () => {
   console.log(data);
 
@@ -93,9 +109,11 @@ const createData = () => {
 
   const tournament_ids = getTournamentIdTuples(data.data.tournamentIds);
 
-  data.data.players.forEach((player) => {
-    const totalPoints = data.data.standings.find(
-      (o) => o.playerId === player.playerId
+  data.data.players.forEach((player: MatchplayPlayerItem) => {
+    const totalPoints = (
+      data.data.standings.find(
+        (o: MatchplayStandingsItem) => o.playerId === player.playerId
+      ) as unknown as MatchplayStandingsItem
     )?.points;
 
     const weekScoreMap: any = {};
