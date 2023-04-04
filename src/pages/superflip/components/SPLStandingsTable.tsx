@@ -96,10 +96,10 @@ interface MatchplayStandingsItem {
 interface MatchplayPlayerItem {
   playerId: number;
   name: string;
-  ifpaId: null;
+  ifpaId: number | null;
   status: string;
   organizerId: number;
-  claimedBy: null;
+  claimedBy: number | null;
 }
 
 const createData = () => {
