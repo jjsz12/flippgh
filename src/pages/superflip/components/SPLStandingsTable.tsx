@@ -164,7 +164,7 @@ export const SPLStandingsTable = ({ seasonId }: SPLStandingsTableProps) => {
     reducer,
     {
       standings: [],
-      column: "averagePoints",
+      column: "adjustedPoints",
       direction: "descending",
     }
   );
@@ -174,7 +174,7 @@ export const SPLStandingsTable = ({ seasonId }: SPLStandingsTableProps) => {
   useEffect(() => {
     dispatch({
       type: "SET_TABLE_DATA",
-      data: averagePointsSort(computedData),
+      data: adjustedPointsSort(computedData),
     });
   }, [computedData]);
 
