@@ -4,9 +4,7 @@ import { Tournament } from "./@types/matchplay_next_types";
 import { Standings } from "./@types/matchplay_types";
 import { FormatType, LocationType, ScheduleItem } from "./schedule_data";
 
-export const getMatchplayLink = (
-  tournament?: Tournament
-) => {
+export const getMatchplayLink = (tournament?: Tournament) => {
   const id = tournament?.tournamentId;
   if (id) {
     return "https://next.matchplay.events/tournaments/" + id;
@@ -173,4 +171,19 @@ export const getPinMapMachineDetails = async (name: LocationType) => {
   const response = await fetch(endpoint);
   const data = await response.json();
   return data.machines;
-}
+};
+
+export const ordinal_suffix_of = (i: number): string => {
+  var j = i % 10,
+    k = i % 100;
+  if (j === 1 && k !== 11) {
+    return i + "st";
+  }
+  if (j === 2 && k !== 12) {
+    return i + "nd";
+  }
+  if (j === 3 && k !== 13) {
+    return i + "rd";
+  }
+  return i + "th";
+};
