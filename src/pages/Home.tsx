@@ -6,9 +6,11 @@ function Home() {
   return (
     <ContentContainer>
       <h3>Superflip Pinball League (SPL)</h3>
-      <i>Service Industry Night (Mondays) @ Pins Mechanical Co. Pittsburgh</i>
+      <span>
+        Service Industry Night (Mondays) @ Pins Mechanical Co. Pittsburgh
+      </span>
       <br />
-      <i>Inaugural season starts Monday, April 3rd at 7:00pm!</i>
+      <span>Season 2 (Summer 2023) starts Monday, July 10th at 7:00pm!</span>
       <ul>
         <li>
           <Link to="/spl/overview">{"Go to Overview"}</Link>

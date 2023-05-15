@@ -3,9 +3,11 @@ export const SPLPageHeader = () => {
     <>
       <h1>Superflip Pinball League (SPL)</h1>
       <p>
-        <i>Service Industry Night (Mondays) @ Pins Mechanical Co. Pittsburgh</i>
+        <span>
+          Service Industry Night (Mondays) @ Pins Mechanical Co. Pittsburgh
+        </span>
         <br />
-        <i>
+        <span>
           407 Cinema Dr, Pittsburgh, PA 15203 [
           <a
             target="_blank"
@@ -15,7 +17,7 @@ export const SPLPageHeader = () => {
             Get Directions
           </a>
           ]
-        </i>
+        </span>
       </p>
     </>
   );
