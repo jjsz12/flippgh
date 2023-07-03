@@ -7,6 +7,7 @@ import { useEffect, useMemo, useReducer, useState } from "react";
 import { ordinal_suffix_of } from "../common/utils";
 
 const PLAYER_ID = 49067;
+const AVG_WPPRTUNITY = "1443.65";
 
 const oneYearAgo = moment().subtract(1, "year");
 const twoYearsAgo = moment().subtract(2, "year");
@@ -225,7 +226,7 @@ export const WPPRv6Analysis = () => {
     column: "event_date",
     direction: "ascending",
   });
-  const [wpprtunity, setWpprtunity] = useState("1294.31");
+  const [wpprtunity, setWpprtunity] = useState(AVG_WPPRTUNITY);
 
   const adjustedPoints = useMemo(
     () => getAdjustedPoints(currentPoints, overallEffPercent, wpprtunity),

@@ -11,8 +11,8 @@ export const SuperlipStandings = () => {
     <ContentContainer>
       <SPLPageHeader />
       {/* <SPLSeasonSelect /> */}
-      <h3>Current Standings (Spring 2023 Season)</h3>
-      <SPLStandingsTable />
+      <h3>Current Standings (Summer 2023 Season)</h3>
+      {/* <SPLStandingsTable /> */}
     </ContentContainer>
   );
 };
