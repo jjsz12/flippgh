@@ -1,8 +1,9 @@
 import _ from "lodash";
-import { useEffect, useReducer } from "react";
+import { useEffect, useMemo, useReducer } from "react";
 import { Table } from "semantic-ui-react";
 
-import data from "../../../common/data/spl/spl_series_data_2626.json";
+import data2626 from "../../../common/data/spl/spl_series_data_2626.json"; // spring 2023
+import data2801 from "../../../common/data/spl/spl_series_data_2801.json"; // summer 2023
 import { getTournamentIdTuples } from "../utils";
 
 interface SPLStandingsRow {
@@ -74,7 +75,7 @@ const reducer = (state: IState, action: any): IState => {
 };
 
 interface SPLStandingsTableProps {
-  seasonId?: number;
+  seasonId: number;
 }
 
 interface IState {
@@ -102,8 +103,13 @@ interface MatchplayPlayerItem {
   claimedBy: number | null;
 }
 
-const createData = () => {
-  console.log(data);
+const dataMap: any = {
+  2626: data2626,
+  2801: data2801,
+};
+
+const createData = (seasonId: number) => {
+  const data = dataMap[seasonId];
 
   const newData: SPLStandingsRow[] = [];
 
@@ -157,9 +163,9 @@ const createData = () => {
   return newData;
 };
 
-const computedData = createData();
-
 export const SPLStandingsTable = ({ seasonId }: SPLStandingsTableProps) => {
+  const computedData = useMemo(() => createData(seasonId), [seasonId]);
+
   const [state, dispatch] = useReducer<(state: IState, action: any) => IState>(
     reducer,
     {
@@ -177,8 +183,6 @@ export const SPLStandingsTable = ({ seasonId }: SPLStandingsTableProps) => {
       data: adjustedPointsSort(computedData),
     });
   }, [computedData]);
-
-  console.log(standings);
 
   return (
     <Table celled unstackable sortable>

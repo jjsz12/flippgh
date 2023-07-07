@@ -10,7 +10,7 @@ function Home() {
         Service Industry Night (Mondays) @ Pins Mechanical Co. Pittsburgh
       </span>
       <br />
-      <span>Season 2 (Summer 2023) starts Monday, July 10th at 7:00pm!</span>
+      <span>Season 2 (Summer 2023) starts Monday, July 10th!</span>
       <ul>
         <li>
           <Link to="/spl/overview">{"Go to Overview"}</Link>

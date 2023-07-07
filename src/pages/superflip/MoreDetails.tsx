@@ -1,5 +1,6 @@
 import ContentContainer from "../../components/ContentContainer";
 import { SPLPageHeader } from "./components/SPLPageHeader";
+import { SPLTimesTable } from "./components/SPLTimesTable";
 
 export const MoreDetails = () => {
   return (
@@ -18,11 +19,8 @@ export const MoreDetails = () => {
       </p>
       <p>
         <h5>QUALIFYING</h5>
+        <SPLTimesTable type="qualifying" />
         <ul>
-          <li>
-            Check-in starts at <b>7:00pm</b>; first round starts at{" "}
-            <b>7:30pm</b> sharp!
-          </li>
           <li>
             <b>Late Shows:</b> Only if you call in advance. Groups will still
             start at 7:30 and will plunge a ball after 1 minute of wait for your
@@ -87,11 +85,8 @@ export const MoreDetails = () => {
       </p>
       <p>
         <h5>FINALS</h5>
+        <SPLTimesTable type="finals" />
         <ul>
-          <li>
-            Check-in starts at <b>6:00pm</b>; first round starts at{" "}
-            <b>6:30pm</b> sharp!
-          </li>
           <li>
             Finals participants are based on their division restrictions (this
             is denoted when you join league) - if you do not qualify for your

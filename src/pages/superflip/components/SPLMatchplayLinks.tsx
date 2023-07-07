@@ -2,8 +2,8 @@ import MatchplayButton from "../../../components/MatchplayButton";
 
 interface SPLMatchplayLinksProps {
   title?: string;
-  randomGroupsLink: string;
-  tieredGroupsLink: string;
+  randomGroupsLink?: string;
+  tieredGroupsLink?: string;
 }
 
 export const SPLMatchplayLinks = ({

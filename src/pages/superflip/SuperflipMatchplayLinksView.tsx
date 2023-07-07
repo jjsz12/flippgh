@@ -10,13 +10,13 @@ import { getTournamentIdTuples } from "./utils";
 
 const tournament_ids = getTournamentIdTuples(data.data.tournamentIds);
 
-const weektoDateMap: any = {
-  1: "Monday 7/10",
-  2: "Monday 7/17",
-  3: "Monday 7/24",
-  4: "Monday 7/31",
-  5: "Monday 8/7",
-  6: "Monday 8/14",
+const weektoDateMap: { [key: number]: string } = {
+  0: "Monday 7/10",
+  1: "Monday 7/17",
+  2: "Monday 7/24",
+  3: "Monday 7/31",
+  4: "Monday 8/7",
+  5: "Monday 8/14",
 };
 
 export const SuperflipMatchplayLinksView = () => {
@@ -25,15 +25,22 @@ export const SuperflipMatchplayLinksView = () => {
       <SPLPageHeader />
       <h3>Matchplay Links (Summer 2023 Season)</h3>
       <Grid stackable columns={3}>
-        {tournament_ids.map((idTuple, index) => {
+        {Object.keys(weektoDateMap).map((key) => {
+          const idTuple = tournament_ids[Number(key)];
           return (
             <Grid.Column>
               <SPLMatchplayLinks
-                title={`Week ${index + 1} (${
-                  weektoDateMap[(index + 1) as any]
-                })`}
-                randomGroupsLink={`https://next.matchplay.events/tournaments/${idTuple[0]}/matches`}
-                tieredGroupsLink={`https://next.matchplay.events/tournaments/${idTuple[1]}/matches`}
+                title={`Week ${Number(key) + 1} (${weektoDateMap[Number(key)]})`}
+                randomGroupsLink={
+                  idTuple
+                    ? `https://next.matchplay.events/tournaments/${idTuple[0]}/matches`
+                    : undefined
+                }
+                tieredGroupsLink={
+                  idTuple
+                    ? `https://next.matchplay.events/tournaments/${idTuple[1]}/matches`
+                    : undefined
+                }
               />
             </Grid.Column>
           );
