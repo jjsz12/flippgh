@@ -2,7 +2,7 @@ const fs = require("fs");
 const fetch = require("node-fetch");
 require("dotenv").config();
 
-const seriesIds = ["2626", "2634", "2801"];
+const seriesIds = ["2626", "2801"];
 const token = process.env.MATCHPLAY_TOKEN;
 const basePath = "https://next.matchplay.events/api";
 
