@@ -13,9 +13,8 @@ export const SPLTimesTable = ({ type }: SPLTimesTableProps) => {
         }}
       >
         <tr>
-          Check-in starts at <b>6:30pm</b>; must be checked in by <b>7:20pm</b>
+          Check-in starts at <b>7:00pm</b>; must be checked in by <b>7:30pm</b>
         </tr>
-        <tr>Tiered group game/order selection between 7:20pm and 7:30pm</tr>
         <tr>
           First round starts at <b>7:30pm</b> sharp!
         </tr>
@@ -32,7 +31,7 @@ export const SPLTimesTable = ({ type }: SPLTimesTableProps) => {
         }}
       >
         <tr>
-          Check-in starts at <b>6:00pm</b>
+          Check-in starts at <b>6:00pm</b>; must be checked in by <b>6:30pm</b>
         </tr>
         <tr>
           First round starts at <b>6:30pm</b> sharp!
