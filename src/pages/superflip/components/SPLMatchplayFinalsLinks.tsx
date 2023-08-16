@@ -1,8 +1,8 @@
 import MatchplayButton from "../../../components/MatchplayButton";
 
-const aDivLink = "https://next.matchplay.events/tournaments/103751";
-const bDivLink = "https://next.matchplay.events/tournaments/103753";
-const xDivLink = "https://next.matchplay.events/tournaments/103754";
+const aDivLink = "https://next.matchplay.events/tournaments/111924";
+const bDivLink = "https://next.matchplay.events/tournaments/111925";
+// const xDivLink = "https://next.matchplay.events/tournaments/103754";
 
 export const SPLMatchplayFinalsLinks = () => {
   return (
@@ -15,7 +15,7 @@ export const SPLMatchplayFinalsLinks = () => {
           fontWeight: "bold",
         }}
       >
-        SPL Spring 2023 Finals Links
+        SPL Summer 2023 Finals Links
       </div>
       <div
         style={{
@@ -37,7 +37,7 @@ export const SPLMatchplayFinalsLinks = () => {
         <span style={{ marginRight: "2rem" }}>B Division:</span>
         <MatchplayButton link={bDivLink} primary compact />
       </div>
-      <div
+      {/* <div
         style={{
           display: "flex",
           justifyContent: "center",
@@ -46,7 +46,7 @@ export const SPLMatchplayFinalsLinks = () => {
       >
         <span style={{ marginRight: "2rem" }}>X Division:</span>
         <MatchplayButton link={xDivLink} primary compact />
-      </div>
+      </div> */}
     </>
   );
 };
