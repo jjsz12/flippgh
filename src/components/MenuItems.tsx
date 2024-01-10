@@ -35,6 +35,47 @@ function MenuItems() {
         Home
       </Menu.Item>
       <Menu.Item>
+        <Menu.Header>Wednesday Night Strikes</Menu.Header>
+        <Menu.Menu>
+          <Menu.Item
+            name="schedule"
+            active={location.pathname === "/schedule"}
+            onClick={() => {
+              navigate("/schedule");
+            }}
+          >
+            Schedule
+          </Menu.Item>
+          {/* <Menu.Item
+            name="locations"
+            active={location.pathname === "/locations"}
+            onClick={() => {
+              navigate("/locations");
+            }}
+          >
+            Location Info
+          </Menu.Item> */}
+          <Menu.Item
+            name="rules"
+            active={location.pathname === "/rules"}
+            onClick={() => {
+              navigate("/rules");
+            }}
+          >
+            Format & Rules
+          </Menu.Item>
+          <Menu.Item
+            name="stats"
+            active={location.pathname === "/stats"}
+            onClick={() => {
+              navigate("/stats");
+            }}
+          >
+            Machine Stats
+          </Menu.Item>
+        </Menu.Menu>
+      </Menu.Item>
+      <Menu.Item>
         <Menu.Header>Superflip Pinball League</Menu.Header>
         <Menu.Menu>
           <Menu.Item
@@ -81,47 +122,6 @@ function MenuItems() {
             }}
           >
             Matchplay Links
-          </Menu.Item>
-        </Menu.Menu>
-      </Menu.Item>
-      <Menu.Item>
-        <Menu.Header>Wednesday Night Strikes</Menu.Header>
-        <Menu.Menu>
-          <Menu.Item
-            name="schedule"
-            active={location.pathname === "/schedule"}
-            onClick={() => {
-              navigate("/schedule");
-            }}
-          >
-            Schedule
-          </Menu.Item>
-          {/* <Menu.Item
-            name="locations"
-            active={location.pathname === "/locations"}
-            onClick={() => {
-              navigate("/locations");
-            }}
-          >
-            Location Info
-          </Menu.Item> */}
-          <Menu.Item
-            name="rules"
-            active={location.pathname === "/rules"}
-            onClick={() => {
-              navigate("/rules");
-            }}
-          >
-            Format & Rules
-          </Menu.Item>
-          <Menu.Item
-            name="stats"
-            active={location.pathname === "/stats"}
-            onClick={() => {
-              navigate("/stats");
-            }}
-          >
-            Machine Stats
           </Menu.Item>
         </Menu.Menu>
       </Menu.Item>

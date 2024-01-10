@@ -15,7 +15,7 @@ export const SuperlipStandings = () => {
   return (
     <ContentContainer>
       <SPLPageHeader />
-      <h3>Current Standings</h3>
+      <h3>Standings</h3>
       <SPLSeasonSelect
         options={options}
         value={seasonId}

@@ -46,7 +46,8 @@ export const SuperflipMatchplayLinksView = () => {
           );
         })}
       </Grid> */}
-      <SPLMatchplayFinalsLinks />
+      {/* <SPLMatchplayFinalsLinks /> */}
+      <h3>No active season right now. Check back soon!</h3>
     </ContentContainer>
   );
 };

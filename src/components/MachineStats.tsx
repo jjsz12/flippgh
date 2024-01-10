@@ -7,6 +7,7 @@ import { FilterItem, TableFilter } from "./TableFilter";
 import { TableDataExport } from "./TableDataExport";
 import _2022_games from "../common/matchplay_games_1871.json";
 import _2023_games from "../common/matchplay_games_2546.json";
+import _2024_games from "../common/matchplay_games_3169.json";
 import { TournamentGames } from "../common/@types/matchplay_next_types";
 
 interface MachineStatEntry {
@@ -74,7 +75,9 @@ const reducer = (state: any, action: any) => {
   }
 };
 
-const games = (_2022_games as TournamentGames[]).concat(_2023_games);
+const games = (_2022_games as TournamentGames[])
+  .concat(_2023_games)
+  .concat(_2024_games);
 
 function MachineStats() {
   const [state, dispatch] = useReducer(reducer, {

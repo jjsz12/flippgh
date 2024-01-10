@@ -2,7 +2,8 @@ const fs = require("fs");
 const fetch = require("node-fetch");
 require("dotenv").config();
 
-const seriesIds = ["1871", "2546"];
+const seriesIds = ["1871", "2546", "3169"];
+// const otherTournamentIds = ["117059"];
 const token = process.env.MATCHPLAY_TOKEN;
 const basePath = "https://next.matchplay.events/api";
 
@@ -66,3 +67,15 @@ for (let id of seriesIds) {
       );
     });
 }
+
+// for (let id of otherTournamentIds) {
+//   const gamePath = `${basePath}/tournaments/${id}/games`;
+//   fetchData(gamePath).then((data) => {
+//     const gameData = data.data;
+//     console.log(`Tournament ID: ${id}; Game Count: ${gameData.length}`);
+//     fs.writeFileSync(
+//       `src/common/matchplay_tournament_${id}_games.json`,
+//       JSON.stringify(gameData)
+//     );
+//   });
+// }

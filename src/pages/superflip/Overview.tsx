@@ -58,7 +58,7 @@ export const Overview = () => {
         Just show up to any league night! We'll help get you signed in and ready
         to play in groups that evening.
       </p>
-      <SPLScheduleText />
+      {/* <SPLScheduleText /> */}
     </ContentContainer>
   );
 };

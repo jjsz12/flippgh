@@ -40,6 +40,36 @@ function MobileMenu() {
             Home
           </Dropdown.Item>
           <Dropdown.Divider />
+          <Dropdown.Header>Wednesday Night Strikes</Dropdown.Header>
+          <Dropdown.Item
+            onClick={() => {
+              navigate("/schedule");
+            }}
+          >
+            Schedule
+          </Dropdown.Item>
+          {/* <Dropdown.Item
+            onClick={() => {
+              navigate("/locations");
+            }}
+          >
+            Location Info
+          </Dropdown.Item> */}
+          <Dropdown.Item
+            onClick={() => {
+              navigate("/rules");
+            }}
+          >
+            Format & Rules
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={() => {
+              navigate("/stats");
+            }}
+          >
+            Machine Stats
+          </Dropdown.Item>
+          <Dropdown.Divider />
           <Dropdown.Header>Superflip Pinball League</Dropdown.Header>
           <Dropdown.Item
             onClick={() => {
@@ -76,36 +106,8 @@ function MobileMenu() {
           >
             Matchplay Links
           </Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Header>Wednesday Night Strikes</Dropdown.Header>
-          <Dropdown.Item
-            onClick={() => {
-              navigate("/schedule");
-            }}
-          >
-            Schedule
-          </Dropdown.Item>
-          {/* <Dropdown.Item
-            onClick={() => {
-              navigate("/locations");
-            }}
-          >
-            Location Info
-          </Dropdown.Item> */}
-          <Dropdown.Item
-            onClick={() => {
-              navigate("/rules");
-            }}
-          >
-            Format & Rules
-          </Dropdown.Item>
-          <Dropdown.Item
-            onClick={() => {
-              navigate("/stats");
-            }}
-          >
-            Machine Stats
-          </Dropdown.Item>
+          {/* <Dropdown.Divider /> */}
+
           {/* <Dropdown.Item
             onClick={() => {
               navigate("/calendar");

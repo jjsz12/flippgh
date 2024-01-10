@@ -10,6 +10,7 @@ import ifpa_results from "../common/ifpa_results.json";
 
 import _2022 from "../common/matchplay_tournaments_1871.json";
 import _2023 from "../common/matchplay_tournaments_2546.json";
+import _2024 from "../common/matchplay_tournaments_3169.json";
 import { Tournament } from "../common/@types/matchplay_next_types";
 
 export interface AppContextType {
@@ -18,7 +19,7 @@ export interface AppContextType {
 
 export const AppContext = React.createContext({});
 
-const tournaments = (_2022 as Tournament[]).concat(_2023);
+const tournaments = (_2022 as Tournament[]).concat(_2023).concat(_2024);
 
 const ignoredIds: number[] = [];
 tournaments.forEach((tournament) => {
